@@ -1,0 +1,72 @@
+{
+  "datasp": [
+    {
+      "id": 0,
+      "img": "./img/book (1).jpg",
+      "name": "The Phantom of the Oprera",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "price": 130
+    },
+    {
+      "id": 1,
+      "img": "./img/book (2).jpg",
+      "name": "Epic History",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "price": 130
+    },
+    {
+      "id": 2,
+      "img": "./img/book (3).jpg",
+      "name": "The Prince and the Pauper",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "price": 130
+    },
+    {
+      "id": 3,
+      "img": "./img/book (4).jpg",
+      "name": "A STORY ABOUT CANCER",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "price": 130
+    },
+    {
+      "id": 4,
+      "img": "./img/book (5).jpg",
+      "name": "THE EARTH",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "price": 130
+    },
+    {
+      "id": 5,
+      "img": "./img/book (6).jpg",
+      "name": "COMPLETE Brambly",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "price": 130
+    },
+    {
+      "id": 6,
+      "img": "./img/book (7).jpg",
+      "name": "Discover",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "price": 130
+    },
+    {
+      "id": 7,
+      "img": "./img/book (1).jpeg",
+      "name": "Night Sky",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "price": 130
+    }
+  ],
+  "users": [
+    {
+      "id": "0",
+      "tk": "duc",
+      "mk": "lolquan1"
+    },
+    {
+      "id": 0.5022095706042495,
+      "tk": "leduc",
+      "mk": "1"
+    }
+  ]
+}
