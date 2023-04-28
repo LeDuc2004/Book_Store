@@ -1,39 +1,84 @@
-.tbl-dn{
+.tbl-dn {
+  display: flex;
+  flex-direction: column;
+  width: 450px;
+  margin: 0 auto;
+  border: 2px solid rgba(128, 128, 128, 0.461);
+  padding: 20px 20px;
+  margin-top: 50px;
+  padding-top: 30px;
+  span {
+    visibility: hidden;
+  }
+  .text-or {
+    text-align: center;
+    margin: 10px 0;
+  }
+  input {
+    height: 5vh;
+    outline: none;
+    padding-left: 15px;
+    font-size: medium;
+    margin: 2px 0;
+  }
+  .btn-dk {
+    width: 100%;
+    background-color: orange;
+    color: white;
+    height: 6vh;
     display: flex;
-    flex-direction: column;
-    width: 30%;
-    margin: 0 35%;
-    border: 2px solid rgba(128, 128, 128, 0.461);
-    padding: 20px 20px;
-    margin-top: 50px;
-    padding-top: 30px;
-    span{
-        visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: 550;
+    font-size: medium;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+      sans-serif;
+  }
+  .common-cha {
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: 550;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+      sans-serif;
+    color: rgba(128, 128, 128, 0.701);
+    cursor: pointer;
+    border-bottom: 1px solid lightgray;
+    .cuon {
+      position: absolute;
+      width: 50%;
+      height: 2px;
+      background-color: orange;
+      transform: translateX(50%);
+      transition: all 0.3s ease;
+
     }
-    .text-or{
-        text-align: center;
-        margin: 10px 0;
-    }
-    input{
-        height: 5vh;
-        outline: none;
-        padding-left: 15px ;
-        font-size:medium ;
-        margin: 2px 0;
-    }
-    .btn-dk{
-        width: 100%;
+    .cuon1 {
+        position: absolute;
+        width: 50%;
+        height: 2px;
         background-color: orange;
-        color: white;
-        height: 6vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        border-radius: 3px;
-        margin-top: 10px;
-        cursor: pointer;
-        font-weight: 550;
-        font-size: medium;
-        font-family: Netflix Sans,Helvetica Neue,Segoe UI,Roboto,Ubuntu,sans-serif;
+        transform: translateX(-50%);
+        
+        transition: all 0.3s ease;
     }
+    .common {
+      height: 100%;
+      width: 50%;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+    .common.in {
+      color: orange;
+      scale: 1.2;
+      transition: all 0.3s ease;
+    }
+  }
 }
+

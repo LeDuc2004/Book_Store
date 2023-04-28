@@ -15,7 +15,6 @@ let listSearch = useSelector((state)=>{
   })
   return product
 })
-console.log(listSearch);
   return (
     <>
       <div className="list-sp">
