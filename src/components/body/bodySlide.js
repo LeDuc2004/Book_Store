@@ -25,12 +25,5 @@ export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
   let data = await res.json();
   return data;
 });
-export const fetchOption = createAsyncThunk(
-  "todos/fetchTodos",
-  async (option) => {
-    const res = await fetch(`https://api-1den8.onrender.com/${option}`);
-    let data = await res.json();
-    return data;
-  }
-);
+
 

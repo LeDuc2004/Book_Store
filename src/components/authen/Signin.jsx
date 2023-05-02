@@ -1,5 +1,5 @@
 import Header from "../header/Header";
-import React, { useState , useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import "./signin.scss";
 
 function Signin() {
@@ -7,17 +7,18 @@ function Signin() {
   const [tk, setTk] = useState("");
   const [mk, setMk] = useState("");
   const [cfmk, setCfmk] = useState("");
-  const [togle , setTogle] = useState(true)
-  const [common , setCommon] = useState(true)
+  const [togle, setTogle] = useState(true);
+  const [common, setCommon] = useState(true);
   let useAuthen = {
     id: Math.random(),
     tk: tk,
     mk: mk,
-    token:[]
+    token: [],
+    borrow:[]
   };
-  useEffect(()=>{
-    setCommon(localStorage.getItem("idd"))
-  } , [localStorage.getItem("idd")])
+  useEffect(() => {
+    setCommon(localStorage.getItem("idd"));
+  }, [localStorage.getItem("idd")]);
   function handleSubmitdk() {
     fetch("http://localhost:3000/users")
       .then((res) => res.json())
@@ -43,7 +44,6 @@ function Signin() {
         }
       }
     }
-
   }
   function handleSubmitdn() {
     fetch("http://localhost:3000/users")
@@ -64,34 +64,36 @@ function Signin() {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
-                "authorization":"levanduc"
+                authorization: "levanduc",
               },
-              body: JSON.stringify(useAuthen),
+              body: JSON.stringify({ id: data[i].id, name: data[i].tk }),
             })
               .then((res) => res.json())
               .then((data1) => {
-                console.log(data[i].id);
                 fetch(`http://localhost:3000/users/${data[i].id}`)
-                .then((res) => res.json())
-                .then((data) => {
-                  pushtoken(data)
-                });
+                  .then((res) => res.json())
+                  .then((data) => {
+                    pushtoken(data);
+                  });
                 function pushtoken(data2) {
-                  data2.token.push(data1.accessToken)
+                  data2.token.push(data1.accessToken);
                   fetch(`http://localhost:3000/users/${data[i].id}`, {
                     method: "PUT",
                     headers: {
                       "Content-Type": "application/json",
-                      "authorization":"levanduc"
+                      authorization: "levanduc",
                     },
                     body: JSON.stringify(data2),
-                  })
-                }
-                localStorage.setItem("token", data1.accessToken);
+                  }).then((res) => {
+                    if (res.status == 200) {
+                      localStorage.setItem("token", data1.accessToken);
 
-                window.location.href = "/"
+                      window.location.href = "/";
+                    }
+                  });
+                }
               });
-              
+
             break;
           } else {
             flag = true;
@@ -104,17 +106,27 @@ function Signin() {
       }
     }
   }
-function idd(id) {
-  setTogle(!togle)
-  localStorage.setItem("idd" , id)
-}
+  function idd(id) {
+    setTogle(!togle);
+    localStorage.setItem("idd", id);
+  }
   return (
     <>
       <Header signin={"none"} />
       <div className="tbl-dn">
         <div className="common-cha">
-          <div onClick={()=>idd(1)} className={common == 2 ? "common" : "common in"}>Đăng ký</div>
-          <div onClick={()=>idd(2)} className={common == 1 ? "common" : "common in"}>Đăng nhập</div>
+          <div
+            onClick={() => idd(1)}
+            className={common == 2 ? "common" : "common in"}
+          >
+            Đăng ký
+          </div>
+          <div
+            onClick={() => idd(2)}
+            className={common == 1 ? "common" : "common in"}
+          >
+            Đăng nhập
+          </div>
           <div className={common == 2 ? "cuon" : "cuon1"}></div>
         </div>
 
@@ -134,14 +146,26 @@ function idd(id) {
           onChange={(e) => setCfmk(e.target.value)}
           type="password"
           placeholder="Xác nhận mật khẩu..."
-          style={common == 2 ? {display:"none"} : {display:""}}
-  
+          style={common == 2 ? { display: "none" } : { display: "" }}
         />
-        <span style={common == 2 ? {display:"none"} : {display:""}}  className="check">{spanCheck[2]}</span>
-        <div style={common == 2 ? {display:"none"} : {display:""}} className="btn-dk" onClick={() => handleSubmitdk()}>
+        <span
+          style={common == 2 ? { display: "none" } : { display: "" }}
+          className="check"
+        >
+          {spanCheck[2]}
+        </span>
+        <div
+          style={common == 2 ? { display: "none" } : { display: "" }}
+          className="btn-dk"
+          onClick={() => handleSubmitdk()}
+        >
           Đăng ký
         </div>
-        <div style={common == 1 ? {display:"none"} : {display:""}} className="btn-dk" onClick={() => handleSubmitdn()}>
+        <div
+          style={common == 1 ? { display: "none" } : { display: "" }}
+          className="btn-dk"
+          onClick={() => handleSubmitdn()}
+        >
           Đăng nhập
         </div>
         {/* <div className="text-or">hoặc</div> */}

@@ -1,0 +1,24 @@
+$main-color:#F46B5B;
+.count-down{
+    display: flex;
+    background-color: transparent;
+    margin-bottom: 20px;
+    .count-down__khung{
+        width: 55px;
+        height: 55px;
+        border-radius: 10px;
+        border: 0.8px solid black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 5px;
+        color: black;
+        justify-content: center;
+        .count-down__hours{
+            font-weight: 550;
+        }
+        .count-down__text{
+            font-size: small;
+        }
+    }
+}

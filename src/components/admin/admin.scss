@@ -1,0 +1,14 @@
+.admin{
+    display: flex;
+    flex-direction: column;
+    .admin-sun{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        .admin-text{
+            margin-left: 10%;
+            font-size: x-large;
+            color: tomato;
+        }
+    }
+}

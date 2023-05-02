@@ -44,6 +44,7 @@
 }
 .authen{
     display: flex;
+    justify-content: space-between;
     .sign-in{
         padding: 10px 15px;
         border-radius: 5px;
@@ -54,6 +55,7 @@
         text-align: center;
         cursor: pointer;
         min-width:max-content;
+        margin-left: 15px;
     }
     .sign-up{
         padding: 10px 15px;
