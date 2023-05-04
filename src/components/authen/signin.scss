@@ -7,7 +7,28 @@
   padding: 20px 20px;
   margin-top: 50px;
   padding-top: 30px;
-  span {
+  button{
+    margin: 0 !important;
+    margin-top: 10px !important;
+    width: 100% !important;
+    font-size: 19px !important;
+
+  }
+  .google{
+    div{
+
+      margin-right: 0 !important;
+    }
+        svg{
+      width: 26px !important;
+      height: 26px !important;
+      g{
+        scale: 1.45;
+      }
+    }
+  }
+
+  p {
     visibility: hidden;
   }
   .text-or {

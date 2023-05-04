@@ -9,6 +9,7 @@ app.use(cors());
 
 app.post("/login", (req, res) => {
   if (req.headers.authorization == "levanduc") {
+    console.log(req.body);
     const accessToken = jwt.sign(req.body, "levanduc");
 
     res.status(200).send({ accessToken });
@@ -19,7 +20,6 @@ app.post("/login", (req, res) => {
 app.post("/borrow", authenToken, (req, res) => {
   const id = req.user.id;
   const item = req.body.obj;
-  console.log(item);
   fetch(`http://localhost:3000/users/${id}`)
     .then((res) => res.json())
     .then((data) => {
@@ -44,7 +44,7 @@ app.post("/borrow", authenToken, (req, res) => {
   }
 });
 app.get("/cart", authenToken, (req, res) => {
-  const id = req.user.id;
+  const id = req.user.id; 
   fetch(`http://localhost:3000/users/${id}`)
     .then((res) => res.json())
     .then((data) => {
