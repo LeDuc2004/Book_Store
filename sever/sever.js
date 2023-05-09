@@ -7,9 +7,39 @@ app.use(express.json());
 app.use(cors());
 
 
+app.get("/authenAdmin", authenToken,(req , res)=>{
+  const id = req.user.id;
+  if (id == 999999) {
+    res.status(200).send("ok")
+  }else{
+    res.send(201).send("qq")
+  }
+})
+app.get("/loadBook/:id", (req, res)=>{
+  let {id} = req.params
+  let index = Number(id) - 1
+  if (index) {
+    let trave = index + 8
+    let arr = []
+    fetch("http://localhost:3000/database")
+      .then((res) => res.json())
+      .then((data) => {
+          database(data)
+      });
+    function database(data) {
+          for (let i = 0; i < data.length; i++) {
+      if (i > index && i <= trave) {
+        arr.push(data[i])
+      }
+      
+    }
+    res.send(arr)
+    }
+
+  }
+})
 app.post("/login", (req, res) => {
   if (req.headers.authorization == "levanduc") {
-    console.log(req.body);
     const accessToken = jwt.sign(req.body, "levanduc");
 
     res.status(200).send({ accessToken });

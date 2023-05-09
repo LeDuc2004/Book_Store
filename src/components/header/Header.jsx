@@ -2,6 +2,7 @@ import "./_header.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { bodySlide } from "../body/bodySlide";
+import { GET } from "../../services";
 function Header({ signin }) {
   const dispatch = useDispatch();
   const [user, setUser] = useState(false);
@@ -11,6 +12,7 @@ function Header({ signin }) {
 
   useEffect(() => {
     if (localStorage.getItem("token") != null) {
+
       fetch("http://localhost:5000/user", {
         method: "GET",
         headers: {

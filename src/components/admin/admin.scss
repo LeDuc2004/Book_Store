@@ -1,5 +1,6 @@
 .admin{
     display: flex;
+    flex: 1;
     flex-direction: column;
     .admin-sun{
         width: 100%;
@@ -10,5 +11,32 @@
             font-size: x-large;
             color: tomato;
         }
+    }
+    span{
+        margin-bottom: 5px !important;
+    }
+}
+.admin-path{
+    display: flex;
+    .sidebar{
+        height: 100vh;
+        background-color: lightgray;
+        width: 20%;
+    }
+    .lable{
+        width: calc(100% - 20px);
+        color: white;
+        background-color: rgba(128, 128, 128, 0.605);
+        font-size: large;
+        cursor: pointer;
+        padding: 10px 0;
+        padding-left: 20px;
+        border-bottom: 1px solid white;
+        i{
+            margin-right: 10px;
+        }
+    }
+    .lable:hover{
+        background-color: gray;
     }
 }

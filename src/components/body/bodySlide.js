@@ -17,11 +17,22 @@ export const bodySlide = createSlice({
         state.datasp = action.payload;
         state.status = "idle";
       })
+      .addCase(fetchMoreTodos.pending, (state, action) => {
+        state.status = "loading";
+      })
+      .addCase(fetchMoreTodos.fulfilled, (state, action) => {
+        state.datasp = state.datasp.concat(action.payload);
+      })
   },
 });
 
 export const fetchTodos = createAsyncThunk("todos/fetchTodos", async () => {
   const res = await fetch("http://localhost:3000/datasp");
+  let data = await res.json();
+  return data;
+});
+export const fetchMoreTodos = createAsyncThunk("todos/fetchMoreTodos", async (id) => {
+  const res = await fetch(`http://localhost:5000/loadBook/${id}`);
   let data = await res.json();
   return data;
 });

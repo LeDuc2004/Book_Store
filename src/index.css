@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.gun{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+.gun h1{
+  position: absolute;
+  color: tomato;
+  font-size: 45px;
+  width: 100%;
+  text-align: center;
+}
+.gun img{
+  width: 50%;
+  height: 100%;
+}
