@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import { fetchCarts } from "./cartSlide";
 import Countdown from "./Countdown";
+import Empty1 from "../../empty/Empty";
+
 
 function Cart() {
     const dispatch = useDispatch();
@@ -11,7 +13,6 @@ function Cart() {
       }, []);
 
       let listCart = useSelector(state => state.cart)
-      console.log(listCart);
 
     return ( <>
     
@@ -27,12 +28,15 @@ function Cart() {
                   </div>
                   <div className="sun-name">{item.name}</div>
                   <div className="sun-price">
-                    <Countdown ngay={item.days}></Countdown>
+                    <Countdown ngay={item.days} id={item.id}></Countdown>
                   </div>
                 </div>
               );
             })
           : ""}
+         
+          
+
     </div>
 
     

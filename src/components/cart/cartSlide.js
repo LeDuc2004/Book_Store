@@ -3,6 +3,15 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 export const cartSlide = createSlice({
   name: "cart",
   initialState: { status: "loading", datasp: [] },
+  reducers:{
+    deleteCart:(state , action) => {
+      state.datasp = state.datasp.filter((item) =>{
+        if (item.id != action.payload.id) {
+          return item
+        }
+      });
+    }
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchCarts.pending, (state, action) => {

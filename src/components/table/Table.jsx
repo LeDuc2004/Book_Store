@@ -4,7 +4,7 @@ const columns = [
     title: 'Name',
     dataIndex: 'tk',
     key: 'name',
-    render: (text) => <a>{text}</a>
+    render: (text) => <a>{text}</a>,
   },
   {
     title: 'Sách đang mượn',
@@ -12,54 +12,29 @@ const columns = [
     dataIndex: 'borrow',
     render: (_, { borrow }) => (
       <>
-        {borrow.map((tag) => {
-          let color = tag.name.length > 10 ? 'green' : 'geekblue';
-          return (
-            <Tag color={color} key={tag}>
-              {tag.name.toUpperCase()}
-            </Tag>
-          );
-        })}
+        {borrow.length == 0 ? (
+          <h2 style={{ color: 'tomato' }}>0</h2>
+        ) : (
+          borrow.map((tag) => {
+            let color = 'volcano';
+            return (
+              <Tag color={color} key={tag}>
+                {tag.name.toUpperCase()}
+              </Tag>
+            );
+          })
+        )}
       </>
     ),
   },
   {
-    title: 'Sách đã Trả',
-    key: 'tags',
+    title: 'Tổng sách đang mượn',
     dataIndex: 'borrow',
-    render: (_, { borrow }) => (
-      <>
-        {borrow.map((tag) => {
-          let color = 'volcano';
-          return (
-            <Tag color={color} key={tag}>
-              {tag.name.toUpperCase()}
-            </Tag>
-          );
-        })}
-      </>
-    ),
+    render: (borrow) => <h2 style={{ color: 'tomato' }}>{borrow.length}</h2>,
   },
-  {
-    title: 'Tổng',
-    dataIndex: 'borrow',
-    render: (borrow) => <h2 style={{color:"tomato"}}>{borrow.length}</h2>
-  },
-  {
-    title: 'Tổng',
-    dataIndex: 'borrow',
-    render: (borrow) => <h2 style={{color:"tomato"}}>{borrow.length}</h2>
-  }
-  
-  
 ];
 
-
 const Table1 = (data1) => {
-    console.log(data1.data);
-  return(
-
-<Table columns={columns} dataSource={data1.data} />
-  )  
-}
+  return <Table columns={columns} dataSource={data1.data} />;
+};
 export default Table1;

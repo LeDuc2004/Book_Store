@@ -1,0 +1,41 @@
+
+body{
+    position: relative;
+
+}
+.mangboc{
+    position: absolute;
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 1;
+    .mangboc__inside{
+        width: 80%;
+        height: max-content;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(219, 157, 42);;
+        .mangboc__sun{
+            cursor: pointer;
+            width: 50%;
+            display: flex;
+            align-items: center;
+            height: 60px;
+            border-bottom: 1px solid white;
+            padding: 5px 0 ;
+            img{
+                margin-left: 20px;
+                width: 10%;
+                height: 100%;
+            }
+            div{
+                color: white;
+                font-weight:600;
+                font-size: large;
+                margin-left: 20px;
+            }
+        }
+    }
+}

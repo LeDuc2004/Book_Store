@@ -3,171 +3,171 @@
   "database": [
     {
       "id": 0,
+      "status": true,
       "img": "./img/book (1).jpg",
-      "name": "The Phantom of the Oprera",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "name": "The Phantom",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 1,
+      "status": true,
       "img": "./img/book (2).jpg",
       "name": "Discover The EARTH",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 2,
+      "status": true,
       "img": "./img/book (3).jpg",
       "name": "The Prince and the Pauper",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 3,
+      "status": true,
       "img": "./img/book (4).jpg",
       "name": "Helping Hands",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 4,
+      "status": true,
       "img": "./img/book (5).jpg",
       "name": "Dear Zoo",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 5,
+      "status": true,
       "img": "./img/book (6).jpg",
       "name": "COMPLETE Brambly",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 6,
+      "status": true,
       "img": "./img/book (7).jpg",
       "name": "Discover ChemisTry",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 7,
+      "status": true,
       "img": "./img/book (8).jpg",
       "name": "Jungle Sounds",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 8,
+      "status": true,
       "img": "./img/book (1).jpeg",
       "name": "Night Sky",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 9,
+      "status": true,
       "img": "./img/book (2).jpeg",
       "name": "Sách hay cho thư viện",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 10,
+      "status": true,
       "img": "./img/book (3).jpeg",
       "name": "The Prambly",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 11,
+      "status": true,
       "img": "./img/book (4).jpeg",
       "name": "Sách hay cho bé",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 12,
+      "status": true,
       "img": "./img/book (5).jpeg",
       "name": "Văn Học",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 13,
+      "status": true,
       "img": "./img/book (6).jpeg",
       "name": "Lịch Sử",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 14,
+      "status": true,
       "img": "./img/book (7).jpeg",
       "name": "Toán Học",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 15,
+      "status": true,
       "img": "./img/book (8).jpeg",
       "name": "Địa Lý & Atlas",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 16,
+      "status": true,
       "img": "./img/book (10).jpeg",
       "name": "Bách khoa toàn thư",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 17,
+      "status": true,
       "img": "./img/book (11).jpeg",
       "name": "A Problem",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 18,
+      "status": true,
       "img": "./img/book (8).jpg",
       "name": "Jungle Sounds 2",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 19,
+      "status": true,
       "img": "./img/book (9).jpg",
       "name": "The Pig",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 20,
+      "status": true,
       "img": "./img/book (10).jpg",
       "name": "Animals",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 21,
+      "status": true,
       "img": "./img/book (11).jpg",
       "name": "Tummy Time",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 22,
+      "status": true,
       "img": "./img/book (14).jpg",
       "name": "Callig Raphy",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     },
     {
       "id": 23,
+      "status": true,
       "img": "./img/book (16).jpg",
       "name": "A STORY ABOUT CANCER",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "price": 130
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
     }
   ],
   "users": [
@@ -178,47 +178,21 @@
       "token": [
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5OTk5LCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2ODMxNjY1NDl9.eaXXo_QXvCVlvloKzElkR3tMybLBd0pwYEpkc8iT9s0",
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5OTk5LCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2ODM1Mzg4ODV9.200kp-g-BQTGUefA0f3mKmNeCXnkgod8f3xnycSw0D8",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5OTk5LCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2ODM2MjI3MDh9.n3EYWfC7YtPfFposWkKuaXs2e-c9lgHIhnrlwrzU4-M"
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5OTk5LCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2ODM3OTc2ODR9._LVOTUrFRJ_gq4EKoAT0qVbMNuxx9de8qFiOqA6Obgs"
       ],
-      "borrow": [
-        {
-          "id": 0,
-          "img": "./img/book (1).jpg",
-          "name": "The Phantom of the Oprera",
-          "days": 1684226409172
-        },
-        {
-          "id": 1,
-          "img": "./img/book (2).jpg",
-          "name": "Discover The EARTH",
-          "days": 1683968041961
-        },
-        {
-          "id": 2,
-          "img": "./img/book (10).jpg",
-          "name": "Animals",
-          "days": 1683795264608
-        },
-        {
-          "id": 3,
-          "img": "./img/book (7).jpeg",
-          "name": "Toán Học",
-          "days": 1683972448677
-        }
-      ]
+      "borrow": []
     },
     {
       "id": "108043588203461517800",
       "tk": "Lê Ðức",
       "token": [],
-      "borrow": [
-        {
-          "id": 0,
-          "img": "./img/book (6).jpg",
-          "name": "COMPLETE Brambly",
-          "days": 1683968236635
-        }
-      ]
+      "borrow": []
+    },
+    {
+      "id": "753921839535443",
+      "tk": "Lê Đức",
+      "token": [],
+      "borrow": []
     }
   ]
 }
