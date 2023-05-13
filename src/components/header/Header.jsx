@@ -1,8 +1,9 @@
 import './_header.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
-import { bodySlide } from '../body/bodySlide';
+import { useState, useEffect, useRef } from 'react';
+import { bodySlide } from '../../body/bodySlide';
 import Menu from './MenuSearch';
+import Search1 from './Search1';
 function Header({ signin }) {
   const dispatch = useDispatch();
   const [user, setUser] = useState(false);
@@ -10,16 +11,16 @@ function Header({ signin }) {
   const [iduser, setIduser] = useState('');
   const [togle, setTogle] = useState(true);
   const [textsearch, setTextsearch] = useState('');
+  const countTime = useRef(null);
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      
       dispatch(
         bodySlide.actions.enter({
           search: textsearch.toLowerCase(),
         }),
       );
-      setTextsearch('')
+      setTextsearch('');
     }
   };
   useEffect(() => {
@@ -41,7 +42,12 @@ function Header({ signin }) {
   }, []);
 
   function handleSearch(e) {
-    setTextsearch(e.target.value.toLowerCase().replace(/\s/g, ''));
+    if (countTime.current) {
+      clearTimeout(countTime.current);
+    }
+    countTime.current = setTimeout(() => {
+      setTextsearch(e.target.value.toLowerCase().replace(/\s/g, ''));
+    }, 300);
   }
   function idd(id) {
     localStorage.setItem('idd', id);
@@ -73,7 +79,7 @@ function Header({ signin }) {
 
         <div className="search" style={signin == 'none' ? { display: 'none' } : {}}>
           <i className="fa-solid fa-magnifying-glass"></i>
-          <input onChange={handleSearch} type="text" placeholder="Tìm kiếm..." onKeyDown={handleKeyDown} />
+          <input id="search" onChange={handleSearch} type="text" placeholder="Tìm kiếm..." onKeyDown={handleKeyDown} />
         </div>
 
         <div className="authen" style={signin == 'none' || user == true ? { display: 'none' } : {}}>

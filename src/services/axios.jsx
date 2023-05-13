@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://example.com/api';
+const BASE_URL = 'http://localhost:3000';
 
 function getData(endpoint) {
   return axios

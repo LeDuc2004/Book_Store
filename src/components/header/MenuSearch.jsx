@@ -1,30 +1,29 @@
 import { useEffect } from 'react';
 import './menu.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { bodySlide } from '../body/bodySlide';
+import { bodySlide } from '../../body/bodySlide';
 
-function Menu({text}) {
-    const dispatch = useDispatch()
+function Menu({ text }) {
+  const dispatch = useDispatch();
   let listSearch = useSelector((state) => {
-    if (text == "") {
-        return []
-    }else{
+    if (text == '') {
+      return [];
+    } else {
       const product = state.listSp.database.filter((item) => {
-      if (item.status != false) {
-        return item.name.toLowerCase().replace(/\s/g, '').includes(text.replace(/\s/g, ''));
-      }
-    });
-    return product;
+        if (item.status != false) {
+          return item.name.toLowerCase().replace(/\s/g, '').includes(text.replace(/\s/g, ''));
+        }
+      });
+      return product;
     }
-
   });
-  useEffect(()=>{
+  useEffect(() => {
     dispatch(
-        bodySlide.actions.copy({
-            data:listSearch
-        })
-    )
-  }, [listSearch.length])
+      bodySlide.actions.copy({
+        data: listSearch,
+      }),
+    );
+  }, [listSearch.length]);
 
   return (
     <>

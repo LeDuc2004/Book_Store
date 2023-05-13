@@ -1,4 +1,4 @@
-import Header from '../header/Header';
+import Header from '../components/header/Header';
 import React, { useState, useEffect } from 'react';
 import './signin.scss';
 import GoogleLogin from 'react-google-login';

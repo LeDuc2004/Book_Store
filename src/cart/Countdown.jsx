@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState, useRef } from 'react';
 import { cartSlide } from './cartSlide';
-import { getData, postData, putData } from '../../services';
+import { getData, postData, putData } from '../services';
 
 function Countdown({ ngay, id }) {
   const [timerD, setTimerD] = useState('00');
