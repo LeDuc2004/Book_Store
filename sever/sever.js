@@ -16,22 +16,21 @@ app.get("/authenAdmin", authenToken, (req, res) => {
 });
 app.get("/loadBook/:id", (req, res) => {
   let { id } = req.params; 
-  if (id) {
+  if (id) { 
     let arr = [];
     fetch("http://localhost:3000/database")
-      .then((res) => res.json())
+      .then((res) => res.json()) 
       .then((data) => {
         database(data);
       });
     function database(data) {
       for (let i = 0; i < data.length; i++) {
-        if (id == 0 && arr.length < 8 && data[i].status != false) {
+        if (id == 0 && arr.length < 8) { 
           arr.push(data[i]);
         } else if (
           id != 0 &&
           i > id &&
-          arr.length < 8 &&
-          data[i].status != false
+          arr.length < 8 
         ) {
           arr.push(data[i]);
         }
@@ -59,6 +58,7 @@ app.post("/borrow", authenToken, (req, res) => {
   });
   function updateStatus(data) {
      data.status = false
+     data.hanmuon = item.hanmuon  
      fetch(`http://localhost:3000/database/${item.id}`, {
       method: "PUT",
       headers: {
@@ -135,7 +135,7 @@ function authenToken(req, res, next) {
   if (!token) res.send(401);
   jwt.verify(token, "levanduc", (err, data) => {
     if (data) {
-      req.user = data;
+      req.user = data;  
       next();
     }
   });

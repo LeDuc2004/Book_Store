@@ -1,4 +1,4 @@
-import Header from '../components/header/Header';
+import Header from '../header/Header';
 import React, { useState, useEffect } from 'react';
 import './signin.scss';
 import GoogleLogin from 'react-google-login';
@@ -91,7 +91,6 @@ function Signin() {
           });
           handleSubmitdn(user);
         } else if (flag == true) {
-          console.log(fborgg.id);
           fetch(`http://localhost:3000/users/${fborgg.id}`)
             .then((res) => res.json())
             .then((data) => {

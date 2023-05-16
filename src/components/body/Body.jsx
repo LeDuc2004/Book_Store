@@ -6,15 +6,19 @@ import dayjs from 'dayjs';
 import { HandleScroll } from '../../handleScroll/HandleScroll';
 import Footsell from '../footer/Footsell';
 import { getData, postData } from '../../services';
+import Star from '../rate/Rate';
+import Calander from '../calander/Calander';
 
 function Body() {
   const [scroll, setScroll] = useState(false);
   const [list, SetList] = useState('');
   const [loading, SetLoading] = useState('');
+  const [item, setItem] = useState('');
   const dispatch = useDispatch();
- 
+
   useEffect(() => {
     dispatch(fetchMoreTodos(list.length));
+    dispatch(fetchDatabase());
   }, []);
 
   const ScrollMore = useEffect(() => {
@@ -30,10 +34,6 @@ function Body() {
 
   HandleScroll(setScroll);
 
-  useEffect(() => {
-    dispatch(fetchTodos());
-    dispatch(fetchDatabase())
-  }, []);
   let listBook = useSelector((state) => state.listSp);
   useEffect(() => {
     SetList(listBook.datasp);
@@ -47,86 +47,51 @@ function Body() {
   }, [listBook.datasp]);
 
   let listSearch = useSelector((state) => {
-    const products = state.listSp.datasp
     const product = state.listSp.datasp.filter((item) => {
-      if (item.status != false) {
-        return item.name.toLowerCase().replace(/\s/g, '').includes(state.listSp.search.replace(/\s/g, ''));
-      }
+      return item.name.toLowerCase().replace(/\s/g, '').includes(state.listSp.search.replace(/\s/g, ''));
     });
     return product;
   });
 
   function borrow(item) {
-  if (localStorage.getItem("token") != "null") {
-    
-    let days = prompt('Số ngày mượn');
-    const countdownDate = dayjs().add(days, 'day').toDate().getTime();
-    dispatch(
-      bodySlide.actions.status({
-        id: item.id,
-      }),
-    );
-    dispatch(
-      bodySlide.actions.status1({
-        id: item.id,
-      })
-    )
-    dispatch(fetchMoreTodos(list[list.length - 1].id));
-    let obj = {
-      ...item,
-      days: countdownDate,
-    };
-    postData('http://localhost:5000/borrow', { obj }, `Beaer ${localStorage.getItem('token')}`);
-  }else{
-    alert("vui lòng đăng nhập")
+    setItem(item);
   }
-
-  }
-
+  console.log(listSearch);
   return (
     <>
+      <Calander item={item} setitem={setItem}></Calander>
       <div className="list-sp no">
         {listSearch.length > 0
           ? listSearch.map((item, index) => {
               return (
                 <div key={index} className="list-sp__sun">
-                  <div className="sun-img">
+                  <a href={`http://localhost:3001/detail/${item.id}`} className="sun-img">
                     <img src={item.img} alt="" />
-                  </div>
+                  </a>
                   <div className="sun-name">{item.name}</div>
                   <div className="sun-price"></div>
+                  <Star star={item.star} disabled={true}></Star>
+
                   <div className="btn-sp">
-                    <div onClick={() => borrow(item)} className="btn-detail">
+                    {item.hanmuon == "" ?                     <div onClick={() => borrow(item)} className="btn-detail">
                       Mượn sách
-                    </div>
+                    </div>:<div>{item.hanmuon}</div>}
+
                   </div>
                 </div>
               );
             })
           : ''}
-      </div>
-      <div className="list-sp">
-        {list != "" && listSearch.length == 0
-          ? list.map((item, index) => {
-              return (
-                <div key={index} className="list-sp__sun">
-                  <div className="sun-img">
-                    <img src={item.img} alt="" />
-                  </div>
-                  <div className="sun-name">{item.name}</div>
-                  <div className="sun-price">130$</div>
-                  <div className="btn-sp">
-                    <div onClick={() => borrow(item)} className="btn-detail">
-                      Mượn sách
-                    </div>
-                  </div>
-                </div>
-              );
-            })
-          : ""}
-      </div>
-      <div style={loading == true ? { display: '' } : { display: 'none' }} className="loading">
-        Loading.....
+        <div style={loading == 'stop' ? { display: 'none' } : { display: '' }} className="baonha">
+          <div className="loadingio-spinner-dual-ring-jkhbsdgkl3m">
+            <div className="ldio-gcx0fsyeir9">
+              <div></div>
+              <div>
+                <div></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
       <div style={loading == 'stop' ? { display: '' } : { display: 'none' }}>
         <Footsell></Footsell>

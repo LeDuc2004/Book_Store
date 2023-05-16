@@ -11,11 +11,10 @@ function GoogleButton() {
       accessToken: response.accessToken,
       googleId:response.profileObj.googleId
     };
-    console.log(user);
+
   };
 
   const onFailure = (error) => {
-    console.log(error);
   };
 
   return (

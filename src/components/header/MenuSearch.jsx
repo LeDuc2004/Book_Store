@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './menu.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { bodySlide } from '../../body/bodySlide';
+import { bodySlide } from '../body/bodySlide';
 
 function Menu({ text }) {
   const dispatch = useDispatch();

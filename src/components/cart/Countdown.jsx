@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState, useRef } from 'react';
 import { cartSlide } from './cartSlide';
-import { getData, postData, putData } from '../services';
+import { getData, postData, putData } from '../../services';
 
 function Countdown({ ngay, id }) {
   const [timerD, setTimerD] = useState('00');
@@ -15,7 +15,8 @@ function Countdown({ ngay, id }) {
     postData(`http://localhost:5000/updateCart/${id}`, { id: 0 }, `Beaer ${localStorage.getItem('token')}`);
     getData(`http://localhost:3000/database/${id}`).then(data => updateStatus(data));
     function updateStatus(data) {
-      data.status = true;
+      data.status = true
+      data.hanmuon = '';
       putData(`http://localhost:3000/database/${id}`, data, 'levanduc');
     }
     dispatch(
@@ -35,6 +36,7 @@ function Countdown({ ngay, id }) {
       const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
       if (distance < 0) {
+        returnBooks(id)
         clearInterval(interval.current);
       } else {
         setTimerD(days);

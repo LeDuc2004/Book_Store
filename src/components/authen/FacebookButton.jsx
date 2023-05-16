@@ -3,7 +3,7 @@ import FacebookLogin from 'react-facebook-login';
 
 function FacebookButton() {
   const responseFacebook = (response) => {
-    console.log(response);
+    
   };
 
   return (

@@ -1,9 +1,8 @@
 import './_header.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect, useRef } from 'react';
-import { bodySlide } from '../../body/bodySlide';
+import { bodySlide, fetchMoreTodos } from '../body/bodySlide';
 import Menu from './MenuSearch';
-import Search1 from './Search1';
 function Header({ signin }) {
   const dispatch = useDispatch();
   const [user, setUser] = useState(false);
@@ -15,6 +14,7 @@ function Header({ signin }) {
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
+      dispatch(fetchMoreTodos("stop"));
       dispatch(
         bodySlide.actions.enter({
           search: textsearch.toLowerCase(),
@@ -41,6 +41,9 @@ function Header({ signin }) {
     }
   }, []);
 
+  function navpa() {
+    setTogle(!togle)
+  }
   function handleSearch(e) {
     if (countTime.current) {
       clearTimeout(countTime.current);
@@ -53,6 +56,7 @@ function Header({ signin }) {
     localStorage.setItem('idd', id);
   }
   function logout() {
+    
     setTogle(!togle);
     let token = localStorage.getItem('token');
     fetch(`http://localhost:5000/logout`, {
@@ -66,6 +70,7 @@ function Header({ signin }) {
       if (res.status == 200) {
         localStorage.setItem('token', null);
         setUser(false);
+        window.location.href = "http://localhost:3001/authen"
       }
     });
   }
@@ -90,21 +95,26 @@ function Header({ signin }) {
             Đăng nhập
           </a>
         </div>
-        <div className="authen" style={signin == 'none' || user == false ? { display: 'none' } : {}}>
-          <a href="/cart" className="sign-in">
-            Tủ Sách
-          </a>
-          <a className="sign-in">Xin chào: {info}</a>
-          <a onClick={() => logout()} className="sign-in">
-            Đăng xuất
-          </a>
-          <a
-            href="/admin"
-            style={signin == 'none' || user == false || iduser != 999999 ? { display: 'none' } : {}}
-            className="sign-in"
-          >
-            Quản lí sách
-          </a>
+        <div className="authen" style={ user == false ? { display: 'none' } : {}}>
+          <div onClick={()=>navpa()} className="sign-in">
+            Xin chào: {info} <i className="fa-solid fa-chevron-down"></i>
+            <div style={togle == true ? {maxHeight:"0"}:{maxHeight:"130px"}} className="bang">
+              <a href="/cart" className="sign-in">
+                Tủ Sách
+              </a>
+
+              <a
+                href="/admin"
+                style={signin == 'none' || user == false || iduser != 999999 ? { display: 'none' } : {}}
+                className="sign-in"
+              >
+                Quản lí sách
+              </a>
+              <a onClick={() => logout()} className="sign-in">
+                Đăng xuất
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       <Menu text={textsearch}></Menu>

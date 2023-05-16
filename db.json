@@ -2,165 +2,441 @@
   "datasp": [],
   "database": [
     {
+      "id": 0,
+      "status": true,
+      "voted": [
+        "108043588203461517800",
+        999999
+      ],
+      "img": "/img/book (1).jpg",
+      "name": "YÊU là tha thu",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        1,
+        2,
+        4,
+        5,
+        2,
+        22
+      ],
+      "star": 4.085714285714285,
+      "hanmuon": ""
+    },
+    {
       "id": 1,
-      "status": false,
-      "img": "./img/book (2).jpg",
-      "name": "Discover The EARTH",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "status": true,
+      "hanmuon": "",
+      "voted": [
+        "108043588203461517800"
+      ],
+      "img": "/img/book (2).jpg",
+      "name": "YÊU là tha thu",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        2,
+        1,
+        0,
+        2,
+        5
+      ],
+      "star": 3.7
     },
     {
       "id": 2,
       "status": true,
-      "img": "./img/book (3).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (3).jpg",
       "name": "The Prince and the Pauper",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        1,
+        0,
+        1,
+        1,
+        2
+      ],
+      "star": 3.6
     },
     {
       "id": 3,
       "status": true,
-      "img": "./img/book (4).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (4).jpg",
       "name": "Helping Hands",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        1,
+        1,
+        1,
+        1,
+        15
+      ],
+      "star": 4.473684210526316
     },
     {
       "id": 4,
       "status": true,
-      "img": "./img/book (5).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (5).jpg",
       "name": "Dear Zoo",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "star": 5
     },
     {
       "id": 5,
       "status": true,
-      "img": "./img/book (6).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (6).jpg",
       "name": "COMPLETE Brambly",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        1,
+        1,
+        0,
+        2
+      ],
+      "star": 4
     },
     {
       "id": 6,
       "status": true,
-      "img": "./img/book (7).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (7).jpg",
       "name": "Discover ChemisTry",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 7,
       "status": true,
-      "img": "./img/book (8).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (8).jpg",
       "name": "Jungle Sounds",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 8,
       "status": true,
-      "img": "./img/book (1).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (1).jpeg",
       "name": "Night Sky",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 9,
       "status": true,
-      "img": "./img/book (2).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (2).jpeg",
       "name": "Sách hay cho thư viện",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 10,
       "status": true,
-      "img": "./img/book (3).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (3).jpeg",
       "name": "The Prambly",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 11,
       "status": true,
-      "img": "./img/book (4).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (4).jpeg",
       "name": "Sách hay cho bé",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 12,
       "status": true,
-      "img": "./img/book (5).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (5).jpeg",
       "name": "Văn Học",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 13,
       "status": true,
-      "img": "./img/book (6).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (6).jpeg",
       "name": "Lịch Sử",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 14,
       "status": true,
-      "img": "./img/book (7).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (7).jpeg",
       "name": "Toán Học",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 15,
       "status": true,
-      "img": "./img/book (8).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (8).jpeg",
       "name": "Địa Lý & Atlas",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 16,
       "status": true,
-      "img": "./img/book (10).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (10).jpeg",
       "name": "Bách khoa toàn thư",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 17,
       "status": true,
-      "img": "./img/book (11).jpeg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (11).jpeg",
       "name": "A Problem",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 18,
       "status": true,
-      "img": "./img/book (8).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (8).jpg",
       "name": "Jungle Sounds 2",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 19,
       "status": true,
-      "img": "./img/book (9).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (9).jpg",
       "name": "The Pig",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 20,
       "status": true,
-      "img": "./img/book (10).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (10).jpg",
       "name": "Animals",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 21,
       "status": true,
-      "img": "./img/book (11).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (11).jpg",
       "name": "Tummy Time",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 22,
       "status": true,
-      "img": "./img/book (14).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (14).jpg",
       "name": "Callig Raphy",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     },
     {
       "id": 23,
       "status": true,
-      "img": "./img/book (16).jpg",
+      "hanmuon": "",
+      "voted": [],
+      "img": "/img/book (16).jpg",
       "name": "A STORY ABOUT CANCER",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?"
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
     }
   ],
   "users": [
@@ -170,16 +446,10 @@
       "mk": "1",
       "token": [
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5OTk5LCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2ODMxNjY1NDl9.eaXXo_QXvCVlvloKzElkR3tMybLBd0pwYEpkc8iT9s0",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5OTk5LCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2ODM1Mzg4ODV9.200kp-g-BQTGUefA0f3mKmNeCXnkgod8f3xnycSw0D8"
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5OTk5LCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2ODM1Mzg4ODV9.200kp-g-BQTGUefA0f3mKmNeCXnkgod8f3xnycSw0D8",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OTk5OTk5LCJuYW1lIjoiYWRtaW4iLCJpYXQiOjE2ODQyMzAzNzd9.3LuwON4rlJS8BBSH90ddR7zcZmCWsVKBRbmxg6UShOM"
       ],
-      "borrow": [
-        {
-          "id": 1,
-          "img": "./img/book (2).jpg",
-          "name": "Discover The EARTH",
-          "days": 1683861626185
-        }
-      ]
+      "borrow": []
     },
     {
       "id": "108043588203461517800",
@@ -190,6 +460,12 @@
     {
       "id": "753921839535443",
       "tk": "Lê Đức",
+      "token": [],
+      "borrow": []
+    },
+    {
+      "id": "103169489702751735783",
+      "tk": "vada le",
       "token": [],
       "borrow": []
     }
