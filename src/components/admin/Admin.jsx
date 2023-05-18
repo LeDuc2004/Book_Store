@@ -6,6 +6,7 @@ import Table1 from '../table/Table';
 import { fetchDatabase } from '../body/bodySlide';
 import Table2 from '../table2/Table2';
 import { postData } from '../../services';
+import Confirm from '../confirm/Confirm';
 
 function Admin() {
   const [stateChoose, setStateChoose] = useState([true, false, false, false]);
@@ -51,6 +52,7 @@ function Admin() {
   }
 
   return (
+    <>
     <div className="admin-path">
       <div className="sidebar">
         <div
@@ -89,6 +91,7 @@ function Admin() {
         <button onClick={() => handleAdd()}>Thêm</button>
       </div>
     </div>
+    </>
   );
 }
 

@@ -1,13 +1,17 @@
-import Header from '../header/Header';
+import Header from '../common/header/Header';
 import React, { useState, useEffect } from 'react';
 import './signin.scss';
 import GoogleLogin from 'react-google-login';
 import { gapi } from 'gapi-script';
 import { LoginSocialFacebook } from 'reactjs-social-login';
 import { FacebookLoginButton } from 'react-social-login-buttons';
+import { ShowSuccessToast } from '../../hooks/toast/Tost';
 
 function Signin() {
-  const [spanCheck, setSpanCheck] = useState(['.', '.', '.']);
+  const [spantk, setSpantk] = useState('.');
+  const [spanmk, setSpanmk] = useState('.');
+  const [spancf, setSpancf] = useState('.');
+
   const [tk, setTk] = useState('');
   const [mk, setMk] = useState('');
   const [cfmk, setCfmk] = useState('');
@@ -16,7 +20,7 @@ function Signin() {
   const clientId = '118219306920-94c7uh6uggg3b1jifmbuul0gkhbkl15g.apps.googleusercontent.com';
   const responseGoogle = (response) => {
     if (response.provider == 'facebook') {
-      const user = {  
+      const user = {
         email: response.data.email,
         name: response.data.name,
         id: response.data.userID,
@@ -99,13 +103,38 @@ function Signin() {
         }
       }
     } else {
+      if (tk == '' && mk == '' && cfmk == '') {
+        setSpantk('Vui lòng nhập tài khoản.');
+        setSpanmk('Vui lòng nhập mật khẩu.');
+        setSpancf('Vui lòng xác nhận mật khẩu.');
+      } else {
+        if (tk == '') {
+          setSpantk('Vui lòng nhập tài khoản.');
+        } else {
+          setSpantk('.');
+        }
+
+
+        if (mk == '') {
+          setSpanmk('Vui lòng nhập mật khẩu.');
+        } else {
+          setSpanmk('.');
+        }
+
+        if (mk != ''  && mk != cfmk) {
+          setSpancf('Mật khẩu nhập lại không khớp.');
+        } else {
+          setSpancf('.');
+        }
+      }
+
       fetch('http://localhost:3000/users')
         .then((res) => res.json())
         .then((data) => {
           authen(data);
         });
       function authen(data) {
-        let flag = true;
+        let flag = '';
         for (let i = 0; i < data.length; i++) {
           if (tk != data[i].tk) {
             flag = false;
@@ -116,15 +145,19 @@ function Signin() {
           }
         }
         if (flag == false) {
-          fetch('http://localhost:3000/users', {
+          if (mk != "" && cfmk != "" && mk == cfmk) {
+       fetch('http://localhost:3000/users', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
             body: JSON.stringify(useAuthen),
           });
+          ShowSuccessToast("Đăng ký thành công")
+          }
+
         } else if (flag == true) {
-          console.log('tồn tại');
+          setSpantk('Tài khoản tồn tại');
         }
       }
     }
@@ -217,12 +250,14 @@ function Signin() {
               break;
             } else {
               flag = true;
-              console.log('mk sai');
+              setSpantk('.')
+              setSpanmk("Mật khẩu không chính xác.")
             }
           }
         }
         if (flag == false) {
           console.log('tk sai');
+          setSpantk("Tài khoản không chính xác")
         }
       }
     }
@@ -247,18 +282,16 @@ function Signin() {
         </div>
 
         <input onChange={(e) => setTk(e.target.value)} type="text" placeholder="Tài khoản..." />
-        <p className="check">{spanCheck[0]}</p>
+        <p style={spantk == '.' ? { visibility: 'hidden' } : { visibility: 'visible' }}>{spantk}</p>
         <input onChange={(e) => setMk(e.target.value)} type="password" placeholder="Mật khẩu..." />
-        <p className="check">{spanCheck[1]}</p>
+        <p style={spanmk == '.' ? { visibility: 'hidden' } : { visibility: 'visible' }}>{spanmk}</p>
         <input
           onChange={(e) => setCfmk(e.target.value)}
           type="password"
           placeholder="Xác nhận mật khẩu..."
           style={common == 2 ? { display: 'none' } : { display: '' }}
         />
-        <p style={common == 2 ? { display: 'none' } : { display: '' }} className="check">
-          {spanCheck[2]}
-        </p>
+        <p style={spancf == '.' ? { visibility: 'hidden' } : { visibility: 'visible' }}>{spancf}</p>
         <div
           style={common == 2 ? { display: 'none' } : { display: '' }}
           className="btn-dk"

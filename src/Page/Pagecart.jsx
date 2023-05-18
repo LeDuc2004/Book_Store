@@ -1,5 +1,5 @@
 import Cart from "../components/cart/Cart";
-import Header from "../components/header/Header";
+import Header from "../components/common/header/Header";
 
 function Pagecart() {
     return ( <>

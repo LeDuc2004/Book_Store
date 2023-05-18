@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import './menu.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { bodySlide } from '../body/bodySlide';
+import { bodySlide } from '../../body/bodySlide';
 
 function Menu({ text }) {
   const dispatch = useDispatch();
@@ -31,12 +31,14 @@ function Menu({ text }) {
         <div className="mangboc__inside">
           {listSearch.length > 0
             ? listSearch.map((item, index) => {
-                return (
-                  <div key={index} className="mangboc__sun">
-                    <img src={item.img} alt="" />
-                    <div className="mangboc__text">{item.name}</div>
-                  </div>
-                );
+                if (index < 6) {
+                  return (
+                    <a href={`http://localhost:3001/detail/${item.id}`} key={index} className="mangboc__sun">
+                      <img src={item.img} alt="" />
+                      <div className="mangboc__text">{item.name}</div>
+                    </a>
+                  );
+                }
               })
             : ''}
         </div>

@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const bodySlide = createSlice({
   name: 'filter',
-  initialState: { status: 'loading', datasp: [], database: [], search: '', copy: [] },
+  initialState: { status: 'loading', datasp: [], database: [], search: '', copy: [], searcharr: [] },
   reducers: {
     searchSp: (state, action) => {
       state.search = action.payload.search;
@@ -29,7 +29,7 @@ export const bodySlide = createSlice({
       state.copy = action.payload.data;
     },
     enter: (state, action) => {
-      state.datasp = state.copy;
+      state.searcharr = state.copy;
     },
     afterborrow: (state, action) => {
       state.datasp = state.datasp.filter((item) => {
@@ -67,7 +67,7 @@ export const bodySlide = createSlice({
 
 export const fetchMoreTodos = createAsyncThunk('todos/fetchMoreTodos', async (id) => {
   if (id == 'stop') {
-    return []
+    return [];
   } else {
     const res = await fetch(`http://localhost:5000/loadBook/${id}`);
     let data = await res.json();

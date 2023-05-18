@@ -5,6 +5,7 @@ import Pagecart from "./Page/Pagecart";
 import PageAdmin from "./Page/PageAdmin";
 import PageDetail from "./Page/PageDetail";
 
+
 function App() {
   let arr = [
     { path: "/", element: <Home></Home> },
@@ -12,6 +13,7 @@ function App() {
     { path: "/cart", element: <Pagecart></Pagecart> },
     { path: "/admin", element: <PageAdmin></PageAdmin> },
     { path: "/detail/:id", element:  <PageDetail></PageDetail>},
+
 
   ];
   return (

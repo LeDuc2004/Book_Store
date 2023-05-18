@@ -1,4 +1,4 @@
-export async function getData(endpoint ) {
+export async function getData(endpoint) {
   try {
     const response = await fetch(`${endpoint}`);
     const data = await response.json();

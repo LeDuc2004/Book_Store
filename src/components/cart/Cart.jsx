@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import { fetchCarts } from './cartSlide';
 import Countdown from './Countdown';
-import Empty1 from '../../empty/Empty';
+import "./cart.scss"
 
 function Cart() {
   const dispatch = useDispatch();

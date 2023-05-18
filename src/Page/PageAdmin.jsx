@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Admin from "../components/admin/Admin";
-import Header from "../components/header/Header";
+import Header from "../components/common/header/Header";
 
 function PageAdmin() {
   const [admin, setAdmin] = useState("");

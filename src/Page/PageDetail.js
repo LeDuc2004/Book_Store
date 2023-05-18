@@ -1,6 +1,6 @@
 import Detail from "../components/detail/Detail";
-import Footsell from "../components/footer/Footsell";
-import Header from "../components/header/Header";
+import Footsell from "../components/common/footer/Footsell";
+import Header from "../components/common/header/Header";
 
 function PageDetail() {
     return (  <>

@@ -1,59 +1,28 @@
-import './_body.scss';
+import '../body/_body.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { bodySlide, fetchDatabase, fetchMoreTodos, fetchTodos } from './bodySlide';
+import { fetchDatabase, fetchMoreTodos } from '../body/bodySlide';
 import dayjs from 'dayjs';
 import { HandleScroll } from '../../hooks/handleScroll/HandleScroll';
 import Footsell from '../common/footer/Footsell';
 import { getData, postData } from '../../services';
 import Star from '../common/rate/Rate';
 import Calander from '../calander/Calander';
-import Confirm from '../confirm/Confirm';
 
-function Body() {
-  const [scroll, setScroll] = useState(false);
+function Search() {
   const [list, SetList] = useState('');
-  const [loading, SetLoading] = useState('');
   const [item, setItem] = useState('');
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(fetchMoreTodos(list.length));
-    dispatch(fetchDatabase());
-  }, []);
 
-  const ScrollMore = useEffect(() => {
-    if (scroll == true) {
-      if (loading != 'stop') {
-        SetLoading(true);
-      }
-      setTimeout(() => {
-        dispatch(fetchMoreTodos(list[list.length - 1].id));
-      }, 500);
-    }
-  }, [scroll]);
-
-  HandleScroll(setScroll);
-
-  let listBook = useSelector((state) => state.listSp);
-  useEffect(() => {
-    SetList(listBook.datasp);
-    setScroll(false);
-    if (loading != 'stop') {
-      SetLoading(false);
-    }
-    if (listBook.status == 'stop') {
-      SetLoading('stop');
-    }
-  }, [listBook.datasp]);
 
   let listSearch = useSelector((state) => {
-    const product = state.listSp.datasp.filter((item) => {
-      return item.name.toLowerCase().replace(/\s/g, '').includes(state.listSp.search.replace(/\s/g, ''));
+      const product = state.listSp.searcharr.filter((item) => {
+
+      return item
     });
     return product;
   });
-
   function borrow(item) {
     setItem(item);
   }
@@ -85,22 +54,10 @@ function Body() {
               );
             })
           : ''}
-        <div style={loading == 'stop' ? { display: 'none' } : { display: '' }} className="baonha">
-          <div className="loadingio-spinner-dual-ring-jkhbsdgkl3m">
-            <div className="ldio-gcx0fsyeir9">
-              <div></div>
-              <div>
-                <div></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
-      <div style={loading == 'stop' ? { display: '' } : { display: 'none' }}>
-        <Footsell></Footsell>
-      </div>
+      <Footsell></Footsell>
     </>
   );
 }
 
-export default Body;
+export default Search;

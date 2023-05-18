@@ -1,9 +1,9 @@
 import './_header.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import { useState, useEffect, useRef } from 'react';
-import { bodySlide, fetchMoreTodos } from '../body/bodySlide';
+import { bodySlide, fetchMoreTodos } from '../../body/bodySlide';
 import Menu from './MenuSearch';
-function Header({ signin }) {
+function Header({ signin , setSearchPage}) {
   const dispatch = useDispatch();
   const [user, setUser] = useState(false);
   const [info, setInfor] = useState('');
@@ -14,13 +14,14 @@ function Header({ signin }) {
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      dispatch(fetchMoreTodos("stop"));
+      dispatch(fetchMoreTodos('stop'));
       dispatch(
         bodySlide.actions.enter({
           search: textsearch.toLowerCase(),
         }),
       );
       setTextsearch('');
+      setSearchPage(true)
     }
   };
   useEffect(() => {
@@ -42,7 +43,7 @@ function Header({ signin }) {
   }, []);
 
   function navpa() {
-    setTogle(!togle)
+    setTogle(!togle);
   }
   function handleSearch(e) {
     if (countTime.current) {
@@ -57,22 +58,24 @@ function Header({ signin }) {
   }
   function logout() {
     
-    setTogle(!togle);
-    let token = localStorage.getItem('token');
-    fetch(`http://localhost:5000/logout`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: `Beaer ${localStorage.getItem('token')}`,
-      },
-      body: JSON.stringify({ token, iduser }),
-    }).then((res) => {
-      if (res.status == 200) {
-        localStorage.setItem('token', null);
-        setUser(false);
-        window.location.href = "http://localhost:3001/authen"
-      }
-    });
+
+      setTogle(!togle);
+      let token = localStorage.getItem('token');
+      fetch(`http://localhost:5000/logout`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Beaer ${localStorage.getItem('token')}`,
+        },
+        body: JSON.stringify({ token, iduser }),
+      }).then((res) => {
+        if (res.status == 200) {
+          localStorage.setItem('token', null);
+          setUser(false);
+          window.location.href = 'http://localhost:3001/authen';
+        }
+      });
+    
   }
 
   return (
@@ -95,10 +98,10 @@ function Header({ signin }) {
             Đăng nhập
           </a>
         </div>
-        <div className="authen" style={ user == false ? { display: 'none' } : {}}>
-          <div onClick={()=>navpa()} className="sign-in">
-            Xin chào: {info} <i className="fa-solid fa-chevron-down"></i>
-            <div style={togle == true ? {maxHeight:"0"}:{maxHeight:"130px"}} className="bang">
+        <div className="authen" style={user == false ? { display: 'none' } : {}}>
+          <div onClick={() => navpa()} className="sign-in">
+           {info} <i className="fa-solid fa-chevron-down"></i>
+            <div style={togle == true ? { maxHeight: '0' } : { maxHeight: '130px' }} className="bang">
               <a href="/cart" className="sign-in">
                 Tủ Sách
               </a>

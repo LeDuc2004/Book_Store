@@ -57,20 +57,7 @@ function Countdown({ ngay, id }) {
     <>
       <div className="count-down">
         <div className="count-down__khung">
-          <div className="count-down__hours">{timerD}</div>
-          <div className="count-down__text">Days</div>
-        </div>
-        <div className="count-down__khung">
-          <div className="count-down__hours">{timerH}</div>
-          <div className="count-down__text">Hrs</div>
-        </div>
-        <div className="count-down__khung">
-          <div className="count-down__hours">{timerM}</div>
-          <div className="count-down__text">Min</div>
-        </div>
-        <div className="count-down__khung">
-          <div className="count-down__hours">{timerS}</div>
-          <div className="count-down__text">Sec</div>
+          <div className="count-down__hours">{timerD}:{timerH}:{timerM}:{timerS}</div>
         </div>
       </div>
       <div className="btn-sp">
