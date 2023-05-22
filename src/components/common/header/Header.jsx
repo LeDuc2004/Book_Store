@@ -108,7 +108,7 @@ function Header({ signin , setSearchPage}) {
 
               <a
                 href="/admin"
-                style={signin == 'none' || user == false || iduser != 999999 ? { display: 'none' } : {}}
+                style={ iduser != 999999 ? { display: 'none' } : {}}
                 className="sign-in"
               >
                 Quản lí sách

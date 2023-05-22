@@ -2,13 +2,14 @@ import Header from "../components/common/header/Header";
 import Body from "../components/body/Body"
 import { useState } from "react";
 import Search from "../components/search/Search";
+import Home from "../components/home/Home";
 
-function Home() {
+function PageHome() {
     const [searchPage , setSearchPage] = useState(false)
     return ( <>
       <Header setSearchPage={setSearchPage}></Header>
       <div style={searchPage == true ? {display:"none"} : {}}>
-        <Body ></Body>
+        <Home></Home>
       </div>
       <div style={searchPage == true ? {} : {display:"none"}}>
         <Search></Search>
@@ -18,4 +19,4 @@ function Home() {
     </> );
 }
 
-export default Home;
+export default PageHome;

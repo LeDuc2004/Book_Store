@@ -49,12 +49,11 @@ const Table2 = () => {
     deleteData(`http://localhost:3000/database/${ttdl.id}`);
     setTogle(!togle);
     setConfirm(false)
-    ShowErrorToast(`Xóa thành công ${ttdl.name}`)
+    ShowSuccessToast(`Xóa thành công ${ttdl.name}`)
   }
   function updatedate(id) {
     let change = prompt('Nhập số ngày');
     if (change == ''|| change==null) {
-      alert('Không được để trống');
     } else {
       getData(`http://localhost:3000/database/${id}`).then((data) => {
         let obj = {
@@ -88,8 +87,8 @@ const Table2 = () => {
           <Space size="middle">
             <a onClick={() => update1(record.id)}>Update Name</a>
 
-            <a onClick={() => updatedate(record.id)}>Update ReturnDate</a>
-            <a onClick={() =>tblo(record.id , record.name)}>Delete</a>
+            <a onClick={() => updatedate(record.id)}><i style={{fontSize:"20px", color:"blue"}} className="fa-solid fa-calendar-days"></i></a>
+            <a onClick={() =>tblo(record.id , record.name)}><i style={{fontSize:"20px", color:"red"}} className="fa-solid fa-trash-can"></i></a>
           </Space>
         )}
       />

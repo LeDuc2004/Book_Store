@@ -180,8 +180,13 @@ function Detail() {
   function tranleft() {
     setTogletb(true);
   }
-  function borrow(item) {
-    setItem1(item);
+  function borrow(item , hanmuon) {
+    if (hanmuon) {
+      ShowInfoToast("Sách đã có người mượn !")
+    }else{
+      
+      setItem1(item);
+    }
   }
   function togleOff() {
     setTogletb(false);
@@ -268,7 +273,7 @@ function Detail() {
               </div>
             </div>
           </div>
-          <Calander item={item1} setitem={setItem1}></Calander>
+          <Calander item={item1} setitem={setItem1} setTogle1={setTogle} togle1={togle}></Calander>
           <div className="detail">
             <div className="detail__left">
               <div className="detail__img">
@@ -284,7 +289,7 @@ function Detail() {
                 <Star className="star-custom-75" star={sostar} disabled={true}></Star>
               </div>
               <div className="detail__btn">
-                <div onClick={() => borrow(item)} className="detail__borrow btn">
+                <div style={item.hanmuon ? {opacity:"0.5"} :{}}  onClick={() => borrow(item , item.hanmuon)} className="detail__borrow btn">
                   <i className="fa-solid fa-credit-card"></i>Mượn Sách
                 </div>
                 <div className="detail__favorate btn">

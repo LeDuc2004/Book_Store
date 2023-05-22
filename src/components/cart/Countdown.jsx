@@ -1,11 +1,12 @@
 import './countdown.scss';
 import dayjs from 'dayjs';
+import Confirm from '../confirm/Confirm';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect, useState, useRef } from 'react';
 import { cartSlide } from './cartSlide';
 import { getData, postData, putData } from '../../services';
 
-function Countdown({ ngay, id }) {
+function Countdown({ ngay, id , confirm}) {
   const [timerD, setTimerD] = useState('00');
   const [timerH, setTimerH] = useState('00');
   const [timerM, setTimerM] = useState('00');
@@ -65,6 +66,7 @@ function Countdown({ ngay, id }) {
           Trả sách
         </div>
       </div>
+
     </>
   );
 }

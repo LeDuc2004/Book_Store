@@ -10,7 +10,7 @@ import { getData, postData } from '../../services';
 import { ShowErrorToast, ShowSuccessToast } from '../../hooks/toast/Tost';
 import { values } from 'lodash';
 const { RangePicker } = DatePicker;
-function Calander({ item, setitem }) {
+function Calander({ item, setitem, setTogle1, togle1 }) {
   const dispatch = useDispatch();
 
   const [today, setToday] = useState('');
@@ -74,6 +74,9 @@ function Calander({ item, setitem }) {
         };
         dispatch(bodySlide.actions.afterborrow(obj));
         postData('http://localhost:5000/borrow', { obj }, `Beaer ${localStorage.getItem('token')}`);
+        if (setTogle1) {
+          setTogle1(!togle1);
+        }
         ShowSuccessToast('Mượn thành công !!');
       } else {
         ShowErrorToast('Vui lòng đăng nhập');
@@ -108,7 +111,6 @@ function Calander({ item, setitem }) {
             <div className="chooseDate__text">Chọn ngày mượn sách</div>
             <Space direction="vertical" size={5}>
               <RangePicker
-              
                 placement={'topLeft'}
                 disabled={[true, false]}
                 onChange={(e) => handleDate(e)}
