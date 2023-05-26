@@ -11,6 +11,8 @@ import Calander from '../calander/Calander';
 import Confirm from '../confirm/Confirm';
 import Flag from '../flag/Flag';
 import Slide from '../slideShow/Slide';
+import { Empty } from 'antd';
+import { productRemain } from '../catalog/selector';
 
 function Body() {
   const [scroll, setScroll] = useState(false);
@@ -19,11 +21,6 @@ function Body() {
   const [item, setItem] = useState('');
   const [iduser, setIduser] = useState('');
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchMoreTodos(list.length));
-    dispatch(fetchDatabase());
-  }, []);
 
   useEffect(() => {
     if (localStorage.getItem('token') != null) {
@@ -40,91 +37,114 @@ function Body() {
         });
     }
   }, []);
+  // useEffect(() => {
+  //   dispatch(fetchMoreTodos(list.length));
+  //   dispatch(fetchDatabase());
+  // }, []);
 
-  const ScrollMore = useEffect(() => {
-    if (scroll == true) {
-      if (loading != 'stop') {
-        SetLoading(true);
+
+  // const ScrollMore = useEffect(() => {
+  //   if (scroll == true) {
+  //     if (loading != 'stop') {
+  //       SetLoading(true);
+  //     }
+
+  //     dispatch(fetchMoreTodos(list[list.length - 1].id));
+  //   }
+  // }, [scroll]);
+
+  // HandleScroll(setScroll);
+
+  // let listBook = useSelector((state) => state.listSp);
+  // useEffect(() => {
+  //   SetList(listBook.datasp);
+  //   setScroll(false);
+  //   if (loading != 'stop') {
+  //     SetLoading(false);
+  //   }
+  //   if (listBook.status == 'stop') {
+  //     SetLoading('stop');
+  //   }
+  // }, [listBook.datasp]);
+
+  let listSearch = useSelector(productRemain);
+
+
+  // function borrow(item) {
+  //   setItem(item);
+  // }
+  function addlike(item) {
+    console.log(1);
+    if (item.tym.includes(iduser)) {
+      getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
+      function addtym1(data) {
+        let obj = { ...data };
+        obj.tym = data.tym.filter((item) => item != iduser);
+        dispatch(bodySlide.actions.updatetymsp1({ id: item.id, iduser }));
+        putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
+          dispatch(bodySlide.actions.updatetymsp1({ id: item.id, iduser }))
+          
+        );
       }
+      getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data))
+      function addtym(data) {
+        let obj = { ...data };
 
-      dispatch(fetchMoreTodos(list[list.length - 1].id));
-    }
-  }, [scroll]);
+        obj.tym = data.tym.filter((item1) => item1.id != item.id);
 
-  HandleScroll(setScroll);
-
-  let listBook = useSelector((state) => state.listSp);
-  useEffect(() => {
-    SetList(listBook.datasp);
-    setScroll(false);
-    if (loading != 'stop') {
-      SetLoading(false);
-    }
-    if (listBook.status == 'stop') {
-      SetLoading('stop');
-    }
-  }, [listBook.datasp]);
-
-  let listSearch = useSelector((state) => {
-    const product = state.listSp.datasp.filter((item) => {
-      return item.name.toLowerCase().replace(/\s/g, '').includes(state.listSp.search.replace(/\s/g, ''));
-    });
-    return product;
-  });
-
-  function borrow(item) {
-    setItem(item);
-  }
-  function handleFavorite(item) {
-    getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
-    function addtym(data) {
-      let newitem = { ...item };
-      data.tym.push(newitem);
-
-      // putData(`http://localhost:3000/users/${iduser}`, data);
-      // putData(`http://localhost:3000/database/${item.id}`, newitem);
+        putData(`http://localhost:3000/users/${iduser}`, obj);
+      }
+    } else {
+      getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
+      function addtym1(data) {
+        let obj = { ...data };
+        obj.tym.push(iduser);
+        putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
+          dispatch(bodySlide.actions.updatetymsp({ id: item.id, iduser })),
+        );
+      }
+      getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
+      function addtym(data) {
+        let obj = { ...data };
+        obj.tym.push(item);
+        putData(`http://localhost:3000/users/${iduser}`, obj);
+      }
     }
   }
   return (
     <>
-      <Slide></Slide>
-
-      <Calander item={item} setitem={setItem}></Calander>
       <div className="list-sp no">
         {listSearch.length > 0
           ? listSearch.map((item, index) => {
               return (
-                <>
-                  <div key={item.id} className="list-sp__sun">
-                    <div style={item.hanmuon != '' ? {} : { display: 'none' }}>
+                <div className="item1" key={item.id}>
+                  <div
+                    style={item.tym.includes(iduser) ? { color: 'red' } : {}}
+                    onClick={() => addlike(item)}
+                    className="addhopy"
+                  >
+                    <i className="fa-solid fa-heart"></i>
+                  </div>
+                  <a href={`http://localhost:3001/detail/${item.id}`}>
+                    <div style={item.hanmuon ? {} : { display: 'none' }}>
                       <Flag></Flag>
                     </div>
-                    <div onClick={() => handleFavorite(item)} className="tym">
-                      <i className="fa-solid fa-heart"></i>
-                    </div>
+                    <img src={item.img} alt="" />
+                    <p>{item.name}</p>
+                    <div className="item1-text">
+                      <div className="author">{item.author}</div>
+                      <div className="authorstar">
+                        {item.star ?? 0}
 
-                    <a href={`http://localhost:3001/detail/${item.id}`} className="sun-img">
-                      <img src={item.img} alt="" />
-                    </a>
-                    <div className="sun-name">{item.name}</div>
-                    <div className="sun-price"></div>
-                    <Star star={item.star} disabled={true}></Star>
-
-                    <div className="btn-sp">
-                      {item.hanmuon == '' ? (
-                        <div onClick={() => borrow(item)} className="btn-detail">
-                          Mượn sách
-                        </div>
-                      ) : (
-                        <div>Hạn trả sách: {item.hanmuon}</div>
-                      )}
+                        <i className="fa-solid fa-star"></i>
+                      </div>
                     </div>
-                  </div>
-                </>
+                  </a>
+                </div>
               );
             })
-          : ''}
-        <div style={loading == 'stop' ? { display: 'none' } : { display: '' }} className="baonha">
+          : <Empty></Empty>}
+        {/* <div style={loading == 'stop' ? { display: 'none' } : { display: '' }} className="baonha">
           <div className="loadingio-spinner-dual-ring-jkhbsdgkl3m">
             <div className="ldio-gcx0fsyeir9">
               <div></div>
@@ -133,12 +153,8 @@ function Body() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
-      <div style={loading == 'stop' ? { display: '' } : { display: 'none' }}>
-      </div>
-
-      <Footsell></Footsell>
     </>
   );
 }

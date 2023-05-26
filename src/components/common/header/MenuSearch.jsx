@@ -5,14 +5,25 @@ import { bodySlide } from '../../body/bodySlide';
 
 function Menu({ text }) {
   const dispatch = useDispatch();
+  let listAuthor = useSelector((state) => {
+    if (text === '') {
+      return [];
+    } else {
+      const product = state.listSp.database.filter((item, index, self) => {
+        const lowercaseAuthor = item.author.toLowerCase().replace(/\s/g, '');
+        const lowercaseText = text.replace(/\s/g, '');
+        return lowercaseAuthor.includes(lowercaseText) && self.findIndex((el) => el.author.toLowerCase().replace(/\s/g, '') === lowercaseAuthor) === index;
+      });
+      return product;
+    }
+  });
+  
   let listSearch = useSelector((state) => {
     if (text == '') {
       return [];
     } else {
       const product = state.listSp.database.filter((item) => {
-        if (item.status != false) {
-          return item.name.toLowerCase().replace(/\s/g, '').includes(text.replace(/\s/g, ''));
-        }
+        return item.name.toLowerCase().replace(/\s/g, '').includes(text.replace(/\s/g, ''));
       });
       return product;
     }
@@ -27,8 +38,22 @@ function Menu({ text }) {
 
   return (
     <>
-      <div className="mangboc">
+      <div className="mangboc1">
         <div className="mangboc__inside">
+          <div  className="nenauthor">
+            {listAuthor.length > 0
+              ? listAuthor.map((item, index) => {
+                  if (index < 6) {
+                    return (
+                      <a key={index} href={`http://localhost:3001/detail/${item.id}`} className="mangboc__sun author">
+                        <div className="mangboc__author">{item.author}</div>
+                      </a>
+                    );
+                  }
+                })
+              : ''}
+          </div>
+
           {listSearch.length > 0
             ? listSearch.map((item, index) => {
                 if (index < 6) {

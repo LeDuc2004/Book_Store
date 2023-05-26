@@ -4,7 +4,9 @@ import Signin from './components/authen/Signin';
 import Pagecart from './Page/Pagecart';
 import PageAdmin from './Page/PageAdmin';
 import PageDetail from './Page/PageDetail';
-import PageFavorite from './Page/PageFavorite';
+import PageFavor from './Page/PageFavor';
+import PageCatalg from './Page/PageCatalog';
+
 
 function App() {
   let arr = [
@@ -13,7 +15,9 @@ function App() {
     { path: '/cart', element: <Pagecart></Pagecart> },
     { path: '/admin', element: <PageAdmin></PageAdmin> },
     { path: '/detail/:id', element: <PageDetail></PageDetail> },
-    { path: '/favorite', element: <PageFavorite></PageFavorite> },
+    { path: '/favorite', element: <PageFavor></PageFavor> },
+    { path: '/catalog/:id', element: <PageCatalg></PageCatalg> },
+
   ];
   return (
     <>

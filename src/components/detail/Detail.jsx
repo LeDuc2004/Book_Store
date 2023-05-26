@@ -6,7 +6,10 @@ import { Rate } from 'antd';
 import { getData, putData } from '../../services';
 import Calander from '../calander/Calander';
 import moment from 'moment';
-import { ShowErrorToast, ShowInfoToast } from '../../hooks/toast/Tost';
+import { ShowErrorToast, ShowInfoToast, ShowSuccessToast } from '../../hooks/toast/Tost';
+import { useDispatch, useSelector } from 'react-redux';
+import { bodySlide } from '../body/bodySlide';
+
 
 function Detail() {
   const [item, setItem] = useState('');
@@ -29,6 +32,8 @@ function Detail() {
   const currentDate = moment().format('DD-MM-YYYY');
 
   const [togletb, setTogletb] = useState(false);
+  const dispatch = useDispatch()
+
 
   let { id } = useParams();
   useEffect(() => {
@@ -54,8 +59,8 @@ function Detail() {
       });
   }, []);
   useEffect(() => {
+    console.log(togle);
     setParam(id);
-
     getData(`http://localhost:3000/database/${id}`).then((data) => {
       getStar(data);
     });
@@ -219,7 +224,29 @@ function Detail() {
       };
       putData(`http://localhost:3000/database/${id}`, data1).then((res) => setTogle(!togle));
     });
-    ShowErrorToast("Đã xóa thành công.")
+    ShowSuccessToast("Đã xóa thành công.")
+  }
+  function addlike(item) {
+    if (item.tym.includes(iduser)) {
+       ShowInfoToast("Sách đã có trong danh sách yêu thích")
+    } else {
+      getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
+      function addtym1(data) {
+        let obj = { ...data };
+        obj.tym.push(iduser);
+        putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
+          dispatch(bodySlide.actions.updatetym({ id: item.id, iduser })),
+        );
+      }
+      getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
+      function addtym(data) {
+        let obj = { ...data };
+        obj.tym.push(item);
+        putData(`http://localhost:3000/users/${iduser}`, obj)
+        .then(res=> setTogle(!togle))
+      }
+      ShowSuccessToast("Đã thêm vào yêu thích")
+    }
   }
   return (
     <>
@@ -227,7 +254,6 @@ function Detail() {
         ''
       ) : (
         <>
-          {' '}
           <div className="tralate1">
             <div style={togletb == true ? { transform: 'translateX(0)' } : {}} className="tralate">
               <div
@@ -285,6 +311,9 @@ function Detail() {
               <div className="detail__name">{item.name}</div>
 
               <div className="detail__text">{item.description}</div>
+              <div className="detail__author">
+                by <div>{item.author}</div>
+              </div>
               <div className="detail__star">
                 <Star className="star-custom-75" star={sostar} disabled={true}></Star>
               </div>
@@ -292,10 +321,12 @@ function Detail() {
                 <div style={item.hanmuon ? {opacity:"0.5"} :{}}  onClick={() => borrow(item , item.hanmuon)} className="detail__borrow btn">
                   <i className="fa-solid fa-credit-card"></i>Mượn Sách
                 </div>
-                <div className="detail__favorate btn">
+                <div onClick={()=>addlike(item)} style={item.tym.includes(iduser) ? {opacity:"0.5"} :{}} className="detail__favorate btn">
                   <i className="fa-regular fa-bookmark"></i>Thêm vào yêu thích
                 </div>
               </div>
+              <div style={item.hanmuon ? {opacity:"1"} :{opacity:"0"}} className="hanmuon1">Sách sẽ được trả vào ngày: <div> {item.hanmuon}</div></div>
+ 
             </div>
           </div>
           <div className="vote">

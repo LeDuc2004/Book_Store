@@ -5,9 +5,9 @@
       "id": 0,
       "author": "William Shakespeare",
       "img": "/kids/kids (70).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Where the Wild Things Are",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [
         {
@@ -19,7 +19,7 @@
         }
       ],
       "endDate": "7",
-      "hanmuon": "29-05-2023",
+      "hanmuon": "",
       "voted": [
         999999
       ],
@@ -38,9 +38,9 @@
       "id": 1,
       "author": "Jane Austen",
       "img": "/kids/kids (69).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Goodnight Moon",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [
         {
@@ -52,7 +52,7 @@
         }
       ],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [
         999999
       ],
@@ -71,9 +71,9 @@
       "id": 2,
       "author": "Mark Twain",
       "img": "/kids/kids (68).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "The Very Hungry Caterpillar",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [
         {
@@ -92,7 +92,7 @@
         }
       ],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [
         "108043588203461517800",
         999999
@@ -112,12 +112,10 @@
       "id": 3,
       "author": "Emily Bronte",
       "img": "/kids/kids (67).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Charlotte's Web",
-      "status": false,
-      "tym": [
-        "108043588203461517800"
-      ],
+      "status": true,
+      "tym": [],
       "comment": [
         {
           "name": "admin",
@@ -128,7 +126,7 @@
         }
       ],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [
         999999
       ],
@@ -147,13 +145,13 @@
       "id": 4,
       "author": "F. Scott Fitzgerald",
       "img": "/kids/kids (5).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Harry Potter and the Philosopher's Stone",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
       "vote": [
@@ -170,15 +168,13 @@
       "id": 5,
       "author": "Charles Dickens",
       "img": "/kids/kids (6).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Matilda",
-      "status": false,
-      "tym": [
-        "108043588203461517800"
-      ],
+      "status": true,
+      "tym": [],
       "comment": [],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
       "vote": [
@@ -195,15 +191,36 @@
       "id": 6,
       "author": "J.R.R. Tolkien",
       "img": "/kids/kids (7).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "The Lion, the Witch and the Wardrobe",
-      "status": false,
-      "tym": [
-        "108043588203461517800"
-      ],
+      "status": true,
+      "tym": [],
       "comment": [],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
+      "voted": [],
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+      "vote": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "star": 0
+    },
+    {
+      "id": 7,
+      "author": "George Orwell",
+      "img": "/kids/kids (8).jpg",
+      "theloai":"kids",
+      "name": "The Cat in the Hat",
+      "status": true,
+      "tym": [],
+      "comment": [],
+      "endDate": "7",
+      "hanmuon": "",
       "voted": [],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
       "vote": [
@@ -217,43 +234,10 @@
       "star": null
     },
     {
-      "id": 7,
-      "author": "George Orwell",
-      "img": "/kids/kids (8).jpg",
-      "theloai": "kids",
-      "name": "The Cat in the Hat",
-      "status": false,
-      "tym": [],
-      "comment": [
-        {
-          "name": "Lê Ðức",
-          "id": "108043588203461517800",
-          "comment": "",
-          "star": 5,
-          "date": "26-05-2023"
-        }
-      ],
-      "endDate": "7",
-      "hanmuon": "31-05-2023",
-      "voted": [
-        "108043588203461517800"
-      ],
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-      "vote": [
-        0,
-        0,
-        0,
-        0,
-        0,
-        1
-      ],
-      "star": 5
-    },
-    {
       "id": 8,
       "author": "Virginia Woolf",
       "img": "/kids/kids (9).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Green Eggs and Ham",
       "status": true,
       "tym": [],
@@ -276,7 +260,7 @@
       "id": 9,
       "author": "Leo Tolstoy",
       "img": "/kids/kids (10).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Oh, the Places You'll Go!",
       "status": true,
       "tym": [],
@@ -299,7 +283,7 @@
       "id": 10,
       "author": "Ernest Hemingway",
       "img": "/kids/kids (11).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "The Giving Tree",
       "status": false,
       "tym": [],
@@ -322,7 +306,7 @@
       "id": 11,
       "author": "Harper Lee",
       "img": "/kids/kids (12).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Corduroy",
       "status": true,
       "tym": [],
@@ -345,13 +329,13 @@
       "id": 12,
       "author": "Charlotte Bronte",
       "img": "/kids/kids (13).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "The Secret Garden",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
       "vote": [
@@ -362,13 +346,13 @@
         0,
         0
       ],
-      "star": null
+      "star": 0
     },
     {
       "id": 13,
       "author": "J.K. Rowling",
       "img": "/kids/kids (14).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Winnie-the-Pooh",
       "status": true,
       "tym": [],
@@ -391,7 +375,7 @@
       "id": 14,
       "author": "Oscar Wilde",
       "img": "/kids/kids (15).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Alice's Adventures in Wonderland",
       "status": false,
       "tym": [
@@ -426,7 +410,7 @@
       "id": 15,
       "author": "Hermann Hesse",
       "img": "/kids/kids (16).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Charlie and the Chocolate Factory",
       "status": false,
       "tym": [],
@@ -459,7 +443,7 @@
       "id": 16,
       "author": "Hermann Hesse",
       "img": "/kids/kids (17).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Black Skin",
       "status": false,
       "tym": [
@@ -485,9 +469,9 @@
       "id": 17,
       "author": "Gabriel Garcia Marquez",
       "img": "/kids/kids (18).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "The Little Prince",
-      "status": true,
+      "status": false,
       "tym": [
         "108043588203461517800"
       ],
@@ -510,7 +494,7 @@
       "id": 18,
       "author": "Aldous Huxley",
       "img": "/kids/kids (19).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "Pippi Longstocking",
       "status": false,
       "tym": [
@@ -535,7 +519,7 @@
       "id": 19,
       "author": "Toni Morrison",
       "img": "/kids/kids (20).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "A Wrinkle in Time",
       "status": true,
       "tym": [],
@@ -558,7 +542,7 @@
       "id": 20,
       "author": "Arthur Conan Doyle",
       "img": "/kids/kids (21).jpg",
-      "theloai": "kids",
+      "theloai":"kids",
       "name": "The Hobbit",
       "status": true,
       "tym": [],
@@ -581,13 +565,13 @@
       "id": 21,
       "author": "Harper Lee",
       "img": "/young/young (12).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Hobbit",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [],
       "endDate": "7",
-      "hanmuon": "31-05-2023",
+      "hanmuon": "",
       "voted": [],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
       "vote": [
@@ -598,19 +582,19 @@
         0,
         0
       ],
-      "star": null
+      "star": 0
     },
     {
       "id": 22,
       "author": "Charlotte Bronte",
       "img": "/young/young (13).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Lord of the Rings",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
       "vote": [
@@ -621,19 +605,19 @@
         0,
         0
       ],
-      "star": null
+      "star": 0
     },
     {
       "id": 23,
       "author": "J.K. Rowling",
       "img": "/young/young (14).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Perks of Being a Wallflower",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
       "vote": [
@@ -644,19 +628,19 @@
         0,
         0
       ],
-      "star": null
+      "star": 0
     },
     {
       "id": 24,
       "author": "Oscar Wilde",
       "img": "/young/young (15).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Book Thief",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
       "vote": [
@@ -667,13 +651,13 @@
         0,
         0
       ],
-      "star": null
+      "star": 0
     },
     {
       "id": 25,
       "author": "Hermann Hesse",
       "img": "/young/young (16).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "Eragon",
       "status": true,
       "tym": [],
@@ -696,7 +680,7 @@
       "id": 26,
       "author": "Agatha Christie",
       "img": "/young/young (17).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Alchemyst",
       "status": true,
       "tym": [],
@@ -719,7 +703,7 @@
       "id": 27,
       "author": "Gabriel Garcia Marquez",
       "img": "/young/young (18).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Mortal Instruments: City of Bones",
       "status": true,
       "tym": [],
@@ -742,7 +726,7 @@
       "id": 28,
       "author": "Aldous Huxley",
       "img": "/young/young (19).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Selection",
       "status": true,
       "tym": [],
@@ -765,7 +749,7 @@
       "id": 29,
       "author": "Toni Morrison",
       "img": "/young/young (20).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The 5th Wave",
       "status": true,
       "tym": [],
@@ -788,7 +772,7 @@
       "id": 30,
       "author": "Arthur Conan Doyle",
       "img": "/young/young (21).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "Miss Peregrine's Home for Peculiar Children",
       "status": true,
       "tym": [],
@@ -811,7 +795,7 @@
       "id": 31,
       "author": "John Steinbeck",
       "img": "/young/young (22).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Lightning Thief",
       "status": true,
       "tym": [],
@@ -834,7 +818,7 @@
       "id": 32,
       "author": "Ray Bradbury",
       "img": "/young/young (23).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Sisterhood of the Traveling Pants",
       "status": true,
       "tym": [],
@@ -857,7 +841,7 @@
       "id": 33,
       "author": "Kurt Vonnegut",
       "img": "/young/young (24).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Princess Diaries",
       "status": true,
       "tym": [],
@@ -880,7 +864,7 @@
       "id": 34,
       "author": "Homer",
       "img": "/young/young (25).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Chronicles of Narnia: Prince Caspian",
       "status": true,
       "tym": [],
@@ -903,7 +887,7 @@
       "id": 35,
       "author": "Albert Camus",
       "img": "/young/young (26).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Secret Circle",
       "status": true,
       "tym": [],
@@ -926,7 +910,7 @@
       "id": 36,
       "author": "Ralph Waldo Emerson",
       "img": "/young/young (27).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Maze of Bones",
       "status": true,
       "tym": [],
@@ -949,7 +933,7 @@
       "id": 37,
       "author": "H.G. Wells",
       "img": "/young/young (28).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Golden Compass",
       "status": true,
       "tym": [
@@ -974,7 +958,7 @@
       "id": 38,
       "author": "Jules Verne",
       "img": "/young/young (29).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Ruby Circle",
       "status": true,
       "tym": [
@@ -999,7 +983,7 @@
       "id": 39,
       "author": "George R.R. Martin",
       "img": "/young/young (30).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Infernal Devices: Clockwork Angel",
       "status": true,
       "tym": [],
@@ -1022,7 +1006,7 @@
       "id": 40,
       "author": "C.S. Lewis",
       "img": "/young/young (31).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The Darkest Minds",
       "status": true,
       "tym": [],
@@ -1045,7 +1029,7 @@
       "id": 41,
       "author": "Stephen King",
       "img": "/young/young (32).jpg",
-      "theloai": "young",
+      "theloai":"young",
       "name": "The House of Hades",
       "status": true,
       "tym": [],
@@ -1068,7 +1052,7 @@
       "id": 42,
       "author": "William Shakespeare",
       "img": "/manga/manga (1).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Hunger Games",
       "status": true,
       "tym": [],
@@ -1091,7 +1075,7 @@
       "id": 43,
       "author": "Jane Austen",
       "img": "/manga/manga (2).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "Harry Potter and the Sorcerer's Stone",
       "status": true,
       "tym": [],
@@ -1114,7 +1098,7 @@
       "id": 44,
       "author": "Mark Twain",
       "img": "/manga/manga (3).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Fault in Our Stars",
       "status": true,
       "tym": [],
@@ -1137,7 +1121,7 @@
       "id": 45,
       "author": "Emily Bronte",
       "img": "/manga/manga (4).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "Divergent",
       "status": true,
       "tym": [],
@@ -1160,7 +1144,7 @@
       "id": 46,
       "author": "F. Scott Fitzgerald",
       "img": "/manga/manga (5).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Maze Runner",
       "status": true,
       "tym": [],
@@ -1183,7 +1167,7 @@
       "id": 47,
       "author": "Charles Dickens",
       "img": "/manga/manga (6).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "To Kill a Mockingbird",
       "status": true,
       "tym": [],
@@ -1206,7 +1190,7 @@
       "id": 48,
       "author": "J.R.R. Tolkien",
       "img": "/manga/manga (7).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Giver",
       "status": true,
       "tym": [],
@@ -1229,7 +1213,7 @@
       "id": 49,
       "author": "George Orwell",
       "img": "/manga/manga (8).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
       "status": true,
       "tym": [],
@@ -1252,7 +1236,7 @@
       "id": 50,
       "author": "Virginia Woolf",
       "img": "/manga/manga (9).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Outsiders",
       "status": true,
       "tym": [],
@@ -1275,7 +1259,7 @@
       "id": 51,
       "author": "Leo Tolstoy",
       "img": "/manga/manga (10).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Hobbit",
       "status": true,
       "tym": [],
@@ -1298,7 +1282,7 @@
       "id": 52,
       "author": "Ernest Hemingway",
       "img": "/manga/manga (11).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Perks of Being a Wallflower",
       "status": true,
       "tym": [],
@@ -1321,7 +1305,7 @@
       "id": 53,
       "author": "Harper Lee",
       "img": "/manga/manga (12).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Book Thief",
       "status": true,
       "tym": [],
@@ -1344,7 +1328,7 @@
       "id": 54,
       "author": "Charlotte Bronte",
       "img": "/manga/manga (13).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "Eragon",
       "status": true,
       "tym": [],
@@ -1367,7 +1351,7 @@
       "id": 55,
       "author": "J.K. Rowling",
       "img": "/manga/manga (14).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Mortal Instruments: City of Bones",
       "status": true,
       "tym": [],
@@ -1390,7 +1374,7 @@
       "id": 56,
       "author": "Oscar Wilde",
       "img": "/manga/manga (15).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Selection",
       "status": true,
       "tym": [],
@@ -1413,7 +1397,7 @@
       "id": 57,
       "author": "Hermann Hesse",
       "img": "/manga/manga (16).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "Miss Peregrine's Home for Peculiar Children",
       "status": true,
       "tym": [],
@@ -1436,7 +1420,7 @@
       "id": 58,
       "author": "Agatha Christie",
       "img": "/manga/manga (17).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Sisterhood of the Traveling Pants",
       "status": true,
       "tym": [],
@@ -1459,7 +1443,7 @@
       "id": 59,
       "author": "Gabriel Garcia Marquez",
       "img": "/manga/manga (18).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Princess Diaries",
       "status": true,
       "tym": [],
@@ -1482,7 +1466,7 @@
       "id": 60,
       "author": "Aldous Huxley",
       "img": "/manga/manga (19).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Secret Circle",
       "status": true,
       "tym": [],
@@ -1505,7 +1489,7 @@
       "id": 61,
       "author": "Toni Morrison",
       "img": "/manga/manga (20).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Golden Compass",
       "status": true,
       "tym": [],
@@ -1528,7 +1512,7 @@
       "id": 62,
       "author": "Arthur Conan Doyle",
       "img": "/manga/manga (21).jpg",
-      "theloai": "manga",
+      "theloai":"manga",
       "name": "The Infernal Devices: Clockwork Angel",
       "status": true,
       "tym": [],
@@ -1551,7 +1535,7 @@
       "id": 63,
       "author": "William Shakespeare",
       "img": "/ault/ault (1).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "Pride and Prejudice",
       "status": true,
       "tym": [],
@@ -1574,7 +1558,7 @@
       "id": 64,
       "author": "Jane Austen",
       "img": "/ault/ault (2).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "To Kill a Mockingbird",
       "status": true,
       "tym": [],
@@ -1597,7 +1581,7 @@
       "id": 65,
       "author": "Mark Twain",
       "img": "/ault/ault (3).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "1984",
       "status": true,
       "tym": [],
@@ -1620,7 +1604,7 @@
       "id": 66,
       "author": "Emily Bronte",
       "img": "/ault/ault (4).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Great Gatsby",
       "status": true,
       "tym": [],
@@ -1643,7 +1627,7 @@
       "id": 67,
       "author": "F. Scott Fitzgerald",
       "img": "/ault/ault (5).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Catcher in the Rye",
       "status": true,
       "tym": [],
@@ -1666,7 +1650,7 @@
       "id": 68,
       "author": "Charles Dickens",
       "img": "/ault/ault (6).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "Jane Eyre",
       "status": true,
       "tym": [],
@@ -1689,7 +1673,7 @@
       "id": 69,
       "author": "J.R.R. Tolkien",
       "img": "/ault/ault (7).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Lord of the Rings",
       "status": true,
       "tym": [],
@@ -1712,7 +1696,7 @@
       "id": 70,
       "author": "George Orwell",
       "img": "/ault/ault (8).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "Animal Farm",
       "status": true,
       "tym": [],
@@ -1735,7 +1719,7 @@
       "id": 71,
       "author": "Virginia Woolf",
       "img": "/ault/ault (9).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Hobbit",
       "status": true,
       "tym": [],
@@ -1758,7 +1742,7 @@
       "id": 72,
       "author": "Leo Tolstoy",
       "img": "/ault/ault (10).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "Fahrenheit 451",
       "status": true,
       "tym": [],
@@ -1781,7 +1765,7 @@
       "id": 73,
       "author": "Ernest Hemingway",
       "img": "/ault/ault (11).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Alchemist",
       "status": true,
       "tym": [],
@@ -1804,7 +1788,7 @@
       "id": 74,
       "author": "Harper Lee",
       "img": "/ault/ault (12).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "Brave New World",
       "status": true,
       "tym": [],
@@ -1827,7 +1811,7 @@
       "id": 75,
       "author": "Charlotte Bronte",
       "img": "/ault/ault (13).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Da Vinci Code",
       "status": true,
       "tym": [],
@@ -1850,7 +1834,7 @@
       "id": 76,
       "author": "J.K. Rowling",
       "img": "/ault/ault (14).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "Gone with the Wind",
       "status": true,
       "tym": [],
@@ -1873,7 +1857,7 @@
       "id": 77,
       "author": "Oscar Wilde",
       "img": "/ault/ault (15).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Chronicles of Narnia",
       "status": true,
       "tym": [
@@ -1898,7 +1882,7 @@
       "id": 78,
       "author": "Hermann Hesse",
       "img": "/ault/ault (16).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Picture of Dorian Gray",
       "status": true,
       "tym": [],
@@ -1921,7 +1905,7 @@
       "id": 79,
       "author": "Agatha Christie",
       "img": "/ault/ault (17).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Adventures of Huckleberry Finn",
       "status": true,
       "tym": [
@@ -1946,7 +1930,7 @@
       "id": 80,
       "author": "Gabriel Garcia Marquez",
       "img": "/ault/ault (18).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Kite Runner",
       "status": true,
       "tym": [],
@@ -1969,7 +1953,7 @@
       "id": 81,
       "author": "Aldous Huxley",
       "img": "/ault/ault (19).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "The Count of Monte Cristo",
       "status": true,
       "tym": [],
@@ -1992,7 +1976,7 @@
       "id": 82,
       "author": "Toni Morrison",
       "img": "/ault/ault (20).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "Wuthering Heights",
       "status": true,
       "tym": [
@@ -2017,7 +2001,7 @@
       "id": 83,
       "author": "Arthur Conan Doyle",
       "img": "/ault/ault (21).jpg",
-      "theloai": "action",
+      "theloai":"action",
       "name": "Moby-Dick",
       "status": true,
       "tym": [],
@@ -2035,303 +2019,6 @@
         0
       ],
       "star": 0
-    }
-  ],
-  "users": [
-    {
-      "id": "999999",
-      "tk": "admin",
-      "mk": 1,
-      "token": [
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwODA0MzU4ODIwMzQ2MTUxNzgwMCIsIm5hbWUiOiJMw6ogw5Dhu6ljIiwiaWF0IjoxNjg0ODM3Mzk4fQ.aQAkvqPqSNhuvyAtfsvzJcjM6jOMBTa4JMo3LktC7hQ"
-      ],
-      "borrow": [],
-      "tym": []
-    },
-    {
-      "id": "108043588203461517800",
-      "tk": "Lê Ðức",
-      "img": "https://lh3.googleusercontent.com/a/AAcHTtcpadAkUAMhP8PABYqkxXe_GiYJuOznhIpkfo1z=s96-c",
-      "token": [
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwODA0MzU4ODIwMzQ2MTUxNzgwMCIsIm5hbWUiOiJMw6ogw5Dhu6ljIiwiaWF0IjoxNjg1MDA5Mzc2fQ.BeeyLliEOIzub74JvZvjWXWY-3ZhSk_qKm4asv-d97Q",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwODA0MzU4ODIwMzQ2MTUxNzgwMCIsIm5hbWUiOiJMw6ogw5Dhu6ljIiwiaW1nIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUFjSFR0Y3BhZEFrVUFNaFA4UEFCWXFreFhlX0dpWUp1T3puaElwa2ZvMXo9czk2LWMiLCJpYXQiOjE2ODUwMjI0MjB9.edCuVzPq_HsaYBeco3oIPVEom8oNOSJYUcUjvTt20t8"
-      ],
-      "borrow": [
-        {
-          "id": 0,
-          "img": "/kids/kids (70).jpg",
-          "name": "Where the Wild Things Are",
-          "days": 1685330599394
-        },
-        {
-          "id": 1,
-          "img": "/kids/kids (69).jpg",
-          "name": "Goodnight Moon",
-          "days": 1685417168239
-        },
-        {
-          "id": 2,
-          "img": "/kids/kids (68).jpg",
-          "name": "The Very Hungry Caterpillar",
-          "days": 1685417231508
-        },
-        {
-          "id": 3,
-          "img": "/kids/kids (67).jpg",
-          "name": "Charlotte's Web",
-          "days": 1685417330902
-        },
-        {
-          "id": 4,
-          "img": "/kids/kids (5).jpg",
-          "name": "Harry Potter and the Philosopher's Stone",
-          "days": 1685417416712
-        },
-        {
-          "id": 5,
-          "img": "/kids/kids (6).jpg",
-          "name": "Matilda",
-          "days": 1685417571584
-        },
-        {
-          "id": 6,
-          "img": "/kids/kids (7).jpg",
-          "name": "The Lion, the Witch and the Wardrobe",
-          "days": 1685417815116
-        },
-        {
-          "id": 7,
-          "img": "/kids/kids (8).jpg",
-          "name": "The Cat in the Hat",
-          "days": 1685505860655
-        },
-        {
-          "id": 21,
-          "img": "/young/young (12).jpg",
-          "name": "The Hobbit",
-          "days": 1685506012135
-        },
-        {
-          "id": 22,
-          "img": "/young/young (13).jpg",
-          "name": "The Lord of the Rings",
-          "days": 1685419658014
-        },
-        {
-          "id": 23,
-          "img": "/young/young (14).jpg",
-          "name": "The Perks of Being a Wallflower",
-          "days": 1685419690008
-        },
-        {
-          "id": 24,
-          "img": "/young/young (15).jpg",
-          "name": "The Book Thief",
-          "days": 1685419706486
-        },
-        {
-          "id": 12,
-          "img": "/kids/kids (13).jpg",
-          "name": "The Secret Garden",
-          "days": 1685420677841
-        }
-      ],
-      "tym": [
-        {
-          "id": 17,
-          "author": "Gabriel Garcia Marquez",
-          "img": "/kids/kids (18).jpg",
-          "name": "The Little Prince",
-          "status": true,
-          "tym": [],
-          "comment": [],
-          "endDate": "7",
-          "hanmuon": "",
-          "voted": [],
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-          "vote": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "star": null
-        },
-        {
-          "id": 16,
-          "author": "Hermann Hesse",
-          "img": "/kids/kids (17).jpg",
-          "name": "Black Skin",
-          "status": false,
-          "tym": [
-            "999999"
-          ],
-          "comment": [],
-          "endDate": "7",
-          "hanmuon": "",
-          "voted": [],
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-          "vote": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "star": null
-        },
-        {
-          "id": 18,
-          "author": "Aldous Huxley",
-          "img": "/kids/kids (19).jpg",
-          "name": "Pippi Longstocking",
-          "status": false,
-          "tym": [],
-          "comment": [],
-          "endDate": "7",
-          "hanmuon": "",
-          "voted": [],
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-          "vote": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "star": null
-        },
-        {
-          "id": 14,
-          "author": "Oscar Wilde",
-          "img": "/kids/kids (15).jpg",
-          "name": "Alice's Adventures in Wonderland",
-          "status": false,
-          "tym": [],
-          "comment": [
-            {
-              "name": "admin",
-              "id": 999999,
-              "comment": "",
-              "star": 5,
-              "date": "24-05-2023"
-            }
-          ],
-          "endDate": "7",
-          "hanmuon": "",
-          "voted": [
-            999999
-          ],
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-          "vote": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            1
-          ],
-          "star": 5
-        },
-        {
-          "id": 3,
-          "author": "Emily Bronte",
-          "img": "/kids/kids (67).jpg",
-          "theloai": "kids",
-          "name": "Charlotte's Web",
-          "status": false,
-          "tym": [],
-          "comment": [
-            {
-              "name": "admin",
-              "id": 999999,
-              "comment": "cay vl",
-              "star": 3,
-              "date": "23-05-2023"
-            }
-          ],
-          "endDate": "7",
-          "hanmuon": "30-05-2023",
-          "voted": [
-            999999
-          ],
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-          "vote": [
-            0,
-            0,
-            0,
-            1,
-            0,
-            0
-          ],
-          "star": 3
-        },
-        {
-          "id": 5,
-          "author": "Charles Dickens",
-          "img": "/kids/kids (6).jpg",
-          "theloai": "kids",
-          "name": "Matilda",
-          "status": false,
-          "tym": [],
-          "comment": [],
-          "endDate": "7",
-          "hanmuon": "30-05-2023",
-          "voted": [],
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-          "vote": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "star": null
-        },
-        {
-          "id": 6,
-          "author": "J.R.R. Tolkien",
-          "img": "/kids/kids (7).jpg",
-          "theloai": "kids",
-          "name": "The Lion, the Witch and the Wardrobe",
-          "status": false,
-          "tym": [],
-          "comment": [],
-          "endDate": "7",
-          "hanmuon": "30-05-2023",
-          "voted": [],
-          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
-          "vote": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0
-          ],
-          "star": null
-        }
-      ]
-    },
-    {
-      "id": "103169489702751735783",
-      "tk": "vada le",
-      "img": "https://lh3.googleusercontent.com/a/AAcHTte9wfRQFlsBRIJOaJyhIgP7FU_IeqnG4LDfcmyj=s96-c",
-      "token": [],
-      "borrow": [],
-      "tym": []
-    },
-    {
-      "id": "753921839535443",
-      "tk": "Lê Đức",
-      "token": [],
-      "borrow": [],
-      "tym": []
     }
   ]
 }

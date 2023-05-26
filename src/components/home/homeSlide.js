@@ -32,7 +32,7 @@ export const homeSlide = createSlice({
       state.searcharr = state.copy;
     },
     afterborrow: (state, action) => {
-      state.datasp = state.datasp.filter((item) => {
+      state.kids = state.kids.filter((item) => {
         if (item.id == action.payload.id) {
           item.hanmuon = action.payload.hanmuon;
           return item;

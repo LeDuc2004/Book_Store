@@ -3,7 +3,7 @@ import Header from "../components/common/header/Header";
 
 function Pagecart() {
     return ( <>
-    <Header signin={"none"}></Header>
+    <Header ></Header>
     <Cart></Cart>
     </> );
 }

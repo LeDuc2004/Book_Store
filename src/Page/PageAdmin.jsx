@@ -19,7 +19,7 @@ function PageAdmin() {
     <>
       {admin == 200 ? (
         <>
-          <Header signin={"none"}></Header>
+          <Header ></Header>
           <Admin></Admin>
         </>
       ) : ""}

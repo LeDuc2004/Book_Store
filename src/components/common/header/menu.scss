@@ -3,21 +3,27 @@ body{
     position: relative;
 
 }
-.mangboc{
-    position: absolute;
-    width: 100%;
-    height: max-content;
-    display: flex;
-    justify-content: center;
-    background-color: transparent;
-    z-index: 1;
+.mangboc1{
     .mangboc__inside{
         width: 80%;
         height: max-content;
         display: flex;
         flex-wrap: wrap;
-        background-color: rgb(219, 157, 42);;
+        background-color: rgb(219, 157, 42);
+        .nenauthor{
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            background-color: whitesmoke;
+            .mangboc__sun.author{
+                width: 50%;
+            }
+        }
         .mangboc__sun{
+            .mangboc__author{
+                color: black;
+                background-color: whitesmoke;
+            }
             cursor: pointer;
             width: 50%;
             display: flex;

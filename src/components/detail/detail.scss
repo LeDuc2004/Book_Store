@@ -1,6 +1,16 @@
 .tralate1 {
   position: relative;
 }
+.hanmuon1{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  div{
+    color: tomato;
+    font-weight: 550;
+    margin-left: 2px;
+  }
+}
 .updatecomment {
   font-size: medium;
   color: #4179cb;
@@ -221,6 +231,16 @@
       font-weight: 550;
       color: gray;
     }
+    .detail__author{
+      margin-top: 10px;
+      font-size: medium;
+      display: flex;
+      div{
+        margin-left: 5px;
+        color: green;
+        font-weight: 550;
+      }
+    }
     .detail__star {
       margin: 10px 0;
     }
@@ -246,9 +266,8 @@
         margin-right: 10px;
       }
       .detail__favorate {
-        border: 1.5px solid #e14658b4;
-        background-color: white;
-        color: #e14658b4;
+        background-color: rgb(235, 28, 28);
+        color: white;
       }
     }
   }

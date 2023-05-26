@@ -33,12 +33,17 @@ function Calander({ item, setitem, setTogle1, togle1 }) {
     return current && (current < currentDate || current > dateAfter7Days);
   };
   function handleDate(values) {
-    setDvates(values);
-    if (values?.length == 2) {
-      let time = values.map((item) => {
-        return `${item.$D}-${item.$M < 9 ? 0 : ''}${item.$M + 1}-${item.$y}`;
-      });
-      setDates(time);
+    let value = values[1] ?? 0;
+    if (value != 0) {
+      setDvates(values);
+      if (values?.length == 2) {
+        let time = values.map((item) => {
+          return `${item.$D}-${item.$M < 9 ? 0 : ''}${item.$M + 1}-${item.$y}`;
+        });
+        setDates(time);
+      }
+    }else{
+    setDates([]);
     }
   }
   function sendDate() {
@@ -60,11 +65,7 @@ function Calander({ item, setitem, setTogle1, togle1 }) {
         dispatch(
           bodySlide.actions.status({
             id: item.id,
-          }),
-        );
-        dispatch(
-          bodySlide.actions.status1({
-            id: item.id,
+            hanmuon: dates[1]
           }),
         );
         let obj = {
@@ -73,10 +74,10 @@ function Calander({ item, setitem, setTogle1, togle1 }) {
           hanmuon: dates[1],
         };
         dispatch(bodySlide.actions.afterborrow(obj));
-        postData('http://localhost:5000/borrow', { obj }, `Beaer ${localStorage.getItem('token')}`);
-        if (setTogle1) {
-          setTogle1(!togle1);
-        }
+        postData('http://localhost:5000/borrow', { obj }, `Beaer ${localStorage.getItem('token')}`).then((data) =>
+          setTogle1(''),
+        );
+
         ShowSuccessToast('Mượn thành công !!');
       } else {
         ShowErrorToast('Vui lòng đăng nhập');
@@ -91,6 +92,7 @@ function Calander({ item, setitem, setTogle1, togle1 }) {
   }
   function huysendDate() {
     setTogle(false);
+    setDates([]);
     setitem('');
     setDvates('');
   }

@@ -1,0 +1,392 @@
+$main-color:#F46B5B;
+.catagories{
+    width: 90%;
+    margin: 0 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+    .catagories__toptext{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .catagories__textto{
+            font-size: xx-large;
+            font-weight: 650;
+            margin-top: 30px;
+        }
+        .catagories__textnho{
+            font-size: small;
+            color: gray;
+            text-align: center;
+            max-width: 350px;
+            margin-top: 15px;
+        }
+    }
+}
+#root{
+    position: relative;
+    width: 100%;
+}
+.filter-btn-icon{
+    max-width: max-content;
+    height: 30px;
+    background-color: #F46B5B;
+    margin-left: 8%;
+    display: flex;
+    align-items: center;
+    color: white;
+    justify-content: center;
+    padding: 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    margin-top: 10px;
+    display: none;
+    
+
+}
+
+.thanh-loc-moble__con{
+    position: fixed;
+    background-color: rgba(128, 128, 128, 0.174);
+    width: 100%;
+    top: 0;
+    height: 100%;
+}
+.thanhloc.moble {
+    width: 50%;
+    padding: 0 2%;
+    border: 1px solid rgba(128, 128, 128, 0.523);
+    background-color: white;
+    display: block ;
+    border-radius: 0;
+    transform: translateX(-100%);
+    transition: all 0.2s linear ;
+    position: fixed;
+    top: 0;
+    overflow-y: scroll;
+    height: 100vh;
+
+}
+.thanhloc-keoPrice .renge-input {
+    width: 100%;
+    position: relative;
+}
+.thanhloc.moble .thanhloc-keoPrice .renge-input .renge-input__pt {
+    position: absolute;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.301);
+    height: 4px;
+    top: 12px;
+    z-index: -2;
+    .fill{
+        position: absolute;
+        width: 50%;
+        background-color: #F46B5B;
+        height: 4px;
+        top: 0px;
+        z-index: -1;
+    }
+}
+.catagories__body{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+#resetfilter-btn{
+    margin-top: 20px;
+    width: 50%;
+    text-align: center;
+    padding: 10px 15px;
+    color: white;
+    background-color: orange;
+    font-size: small;
+    font-weight: 550;
+    cursor: pointer;
+}
+.thanhloc{
+    position: sticky;
+    top: calc(12vh + 10px);
+    width: 15%;
+    padding: 0 2%;
+    max-height: 550px !important;
+    border: 1px solid rgba(128, 128, 128, 0.523);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+
+    .thanhloc-scroll{
+        margin-top: 20px;
+        .thanhloc-scroll__name{
+            font-size: small;
+            font-weight: 750;
+            margin-bottom: 15px;
+        }
+        .thanhloc-scroll__list{
+            overflow-y: scroll;
+            height: 300px;
+            
+        }
+    }
+}
+.thanhloc-scroll__son{
+    display: flex;
+    margin-top: 10px;
+   .thanhloc-scroll__son-name{
+    font-size: 14px;
+   } 
+   .thanhloc-scroll__son-sl{
+    font-size: 14px;
+    color: rgba(128, 128, 128, 0.521);
+    margin-left: 8px;
+   }
+
+
+
+}
+
+::-webkit-scrollbar{
+    
+    width: 4px;
+    background-color: rgba(128, 128, 128, 0.463);
+}
+::-webkit-scrollbar-thumb{
+  
+    background-color: $main-color;
+
+}
+.sp-loc{
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+  
+    
+}
+.list-sques{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
+    .sques-sun{
+        width: 22%;
+        min-width: 130px;
+        height: 93px;
+        border-radius: 20px;
+        border: 1px solid rgba(128, 128, 128, 0.525);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2%;
+        margin-bottom: 2%;
+        cursor: pointer;
+        .sques-sun__img{
+            height: 35px;
+            width: 35px;
+            img{
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .sques-sun__text{
+            font-size: 13px;
+            margin-top: 5px;
+        }
+    }
+}
+
+.thanhloc-keoPrice{
+    margin-top: 20px;
+    
+    width: 100%;
+    .thanhloc-keoPrice__text{
+        font-size: small;
+        margin-top: 10px;
+        font-weight: 550;
+        margin-bottom: 10px;
+
+    }
+    .renge-input{
+        width: 100%;
+        position: relative;
+        .renge-input__pt{
+        position: absolute;
+        width: 100%;
+        background-color: rgba(128, 128, 128, 0.301);
+        height: 4px; 
+        top: 12px;
+        z-index: -2;
+        .fill{
+            position: absolute;
+            width: 50%;
+            background-color: #F46B5B;
+            height: 4px; 
+            top: 0px;
+            z-index: -1;
+        }
+
+        }
+    }
+    .input-keo{
+        -webkit-appearance: none;
+        width: 100%;
+        outline: none;
+        height: 4px;
+        border-radius: 0;
+        cursor: pointer;
+        background-color: transparent;
+        
+    }
+    .input-keo::-webkit-slider-thumb{
+        -webkit-appearance: none;
+          width: 18px;
+          height: 18px;
+          border-radius: 50%;
+          background-color: white;
+          box-shadow: 0px 0px 2px 0.01px gray;
+          z-index: 2;
+
+    }
+    .thanhloc-keoPrice__price{
+        display: flex;
+        margin-top: 25px;
+        .thanhloc-keoPrice__textpr{
+            color: rgba(128, 128, 128, 0.614);
+            font-size: 14px;
+            
+        }
+        .thanhloc-keoPrice__number{
+            font-size: 15px;
+            font-weight: 550;
+            margin-left: 2px;
+        }
+    }
+    
+
+}
+.location-sun{
+    display: flex;
+    align-items: center;
+
+    .location-sun__name{
+        margin-left: 10px;
+    }
+    input[type="checkbox"] {
+        margin: 5px;
+        padding: 0;
+        width: 16px;
+        height: 16px;
+        background-color: #fff;
+        border: none;
+        accent-color: orange;
+        border-radius: 0;
+
+      }
+      .location-sun__name{
+        i{
+            color: orange;
+        }
+        font-size: 14px;
+      }
+      
+
+}
+.featured-brand{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .featured-brand-name{
+        font-size: large;
+        font-weight: 550;
+        margin-left: 2%;
+        margin-bottom: 2%;
+    }
+    .list-featured-brand__img{
+        display: flex;
+        align-items: center;
+        .featured-brand__img{
+            width: 22%;
+            height: 30px;
+            box-sizing: border-box;
+            cursor: pointer;
+        }
+        img{
+            width: 100%;
+            height: 100%;
+            max-width: 117px;
+            max-height: 30px;
+            
+        }
+        .featured-brand__img.one{
+            padding: 3px 20px;
+        }
+        .featured-brand__img.two{
+          padding: 0 35px;
+          margin-top: 10px;
+        }
+        .featured-brand__img.three{
+          padding: 5px 30px;
+
+        }
+        .featured-brand__img.four{
+            padding: 5px 55px;
+
+        }
+        .featured-brand__img.five{
+            padding: 5px 40px;
+
+        }
+    }
+}
+@media only screen and (min-width:46.25em) and (max-width:63.9375em){
+    .thanhloc {
+      display: none;
+    }
+    .sp-loc {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .filter-btn-icon{
+        display: flex;
+        
+    
+    }
+}
+/* mobile */
+@media only screen and (max-width:46.1875em){
+    .thanhloc {
+        display: none;
+      }
+      .sp-loc {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .featured-brand {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        display: none;
+    }
+    .flash .flash__top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .filter-btn-icon{
+        display: flex;
+        
+    
+    }
+}
+  
+

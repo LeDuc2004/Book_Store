@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const bodySlide = createSlice({
   name: 'filter',
-  initialState: { status: 'loading', datasp: [], database: [], search: '', copy: [], searcharr: [] },
+  initialState: { status: 'loading', datasp: [], database: [], search: '', copy: [], searcharr: [], hanmuon: "all" , star:"all"},
   reducers: {
     searchSp: (state, action) => {
       state.search = action.payload.search;
@@ -11,6 +11,7 @@ export const bodySlide = createSlice({
       state.datasp = state.datasp.filter((item) => {
         if (item.id == action.payload.id) {
           item.status = false;
+          item.hanmuon = action.payload.hanmuon
           return item;
         }
         return item;
@@ -32,13 +33,61 @@ export const bodySlide = createSlice({
       state.searcharr = state.copy;
     },
     afterborrow: (state, action) => {
-      state.datasp = state.datasp.filter((item) => {
+      state.database = state.database.filter((item) => {
         if (item.id == action.payload.id) {
           item.hanmuon = action.payload.hanmuon;
           return item;
         }
         return item;
       });
+    },
+    updatetym: (state, action) => {
+      state.database = state.database.filter((item) => {
+        if (item.id == action.payload.id) {
+          item.tym.push(action.payload.iduser);
+          return item;
+        } else {
+          return item;
+        }
+      });
+    },
+    updatetymsp: (state, action) => {
+      state.datasp = state.datasp.filter((item) => {
+        if (item.id == action.payload.id) {
+          item.tym.push(action.payload.iduser);
+          return item;
+        } else {
+          return item;
+        }
+      });
+    },
+    updatetymsp1: (state, action) => {
+      state.datasp = state.datasp.filter((item) => {
+        if (item.id === action.payload.id) {
+          item.tym = item.tym.filter((item1) => item1 !== action.payload.iduser);
+        }
+        return item;
+      });
+    },
+    updatetym1: (state, action) => {
+      state.database = state.database.filter((item) => {
+        if (item.id === action.payload.id) {
+          item.tym = item.tym.filter((item1) => item1 !== action.payload.iduser);
+        }
+        return item;
+      });
+    },
+    trangthaisach: (state, action) => {
+      if (action.payload.status) {
+        state.hanmuon = true
+      } else if (action.payload.status == false) {
+        state.hanmuon = false
+
+      }
+    },
+    trangthaistar: (state, action) => {
+ 
+        state.hanmuon = action.payload
     },
   },
   extraReducers: (builder) => {
@@ -47,13 +96,7 @@ export const bodySlide = createSlice({
         state.status = 'loading';
       })
       .addCase(fetchMoreTodos.fulfilled, (state, action) => {
-        if (action.payload.length > 0) {
-          state.status = 'idle';
-          state.datasp = state.datasp.concat(action.payload).filter((item) => item);
-        } else {
-          state.status = 'stop';
-          state.datasp = state.datasp.concat(action.payload).filter((item) => item);
-        }
+        state.datasp = action.payload;
       })
       .addCase(fetchDatabase.pending, (state, action) => {
         state.status = 'loading';
@@ -66,13 +109,11 @@ export const bodySlide = createSlice({
 });
 
 export const fetchMoreTodos = createAsyncThunk('todos/fetchMoreTodos', async (id) => {
-  if (id == 'stop') {
-    return [];
-  } else {
+   console.log("ref1");
     const res = await fetch(`http://localhost:5000/loadBook/${id}`);
     let data = await res.json();
     return data;
-  }
+
 });
 export const fetchDatabase = createAsyncThunk('todos/fetchDatabase', async () => {
   const res = await fetch('http://localhost:3000/database');

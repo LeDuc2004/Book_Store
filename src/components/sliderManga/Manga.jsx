@@ -1,11 +1,11 @@
-import './kids.scss';
+import './manga.scss';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Flag from '../flag/Flag';
 import { getData, putData } from '../../services';
 import { bodySlide } from '../body/bodySlide';
 import { ShowInfoToast } from '../../hooks/toast/Tost';
-function Kids({ kids, text, iduser, setToglecha }) {
+function Manga({ kids, text, iduser }) {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [togle, setTogle] = useState(true);
   const [isDragging, setIsDragging] = useState(false);
@@ -36,8 +36,8 @@ function Kids({ kids, text, iduser, setToglecha }) {
 
   function handleLeft() {
     if (togle) {
-      let lists = document.querySelectorAll('.Product__item1');
-      document.getElementById('slider1').prepend(lists[lists.length - 1]);
+      let lists = document.querySelectorAll('.Product__item4');
+      document.getElementById('slider4').prepend(lists[lists.length - 1]);
       if (tive == 0) {
         setTive(arr.length - 1);
       } else if (tive < 0) {
@@ -55,8 +55,8 @@ function Kids({ kids, text, iduser, setToglecha }) {
 
   function handleRight(boolen) {
     if (boolen == true) {
-      let lists = document.querySelectorAll('.Product__item1');
-      document.getElementById('slider1').appendChild(lists[0]);
+      let lists = document.querySelectorAll('.Product__item4');
+      document.getElementById('slider4').appendChild(lists[0]);
       if (tive > arr.length - 2) {
         setTive(0);
       } else {
@@ -68,8 +68,8 @@ function Kids({ kids, text, iduser, setToglecha }) {
         setTogle(true);
       }, 400);
     } else if (togle) {
-      let lists = document.querySelectorAll('.Product__item1');
-      document.getElementById('slider1').appendChild(lists[0]);
+      let lists = document.querySelectorAll('.Product__item4');
+      document.getElementById('slider4').appendChild(lists[0]);
 
       if (tive > arr.length - 2) {
         setTive(0);
@@ -99,7 +99,7 @@ function Kids({ kids, text, iduser, setToglecha }) {
     setTive(id);
   }
 
-  const [arr, setArr] = useState(['okl', 'okl1', 'okl2']);
+  const [arr, setArr] = useState([4, 5, 6]);
   const [arr0, setArr0] = useState([]);
   const [arr1, setArr1] = useState([]);
   const [arr2, setArr2] = useState([]);
@@ -126,8 +126,7 @@ function Kids({ kids, text, iduser, setToglecha }) {
     setArr2(arr2);
     setArr3(arr3);
   }, [kids]);
-  // Thêm yêu thích
- function addlike(item) {
+  function addlike(item) {
     if (item.tym.includes(iduser)) {
       getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
       function addtym1(data) {
@@ -151,6 +150,7 @@ function Kids({ kids, text, iduser, setToglecha }) {
       function addtym1(data) {
         let obj = { ...data };
         obj.tym.push(iduser);
+        console.log(obj);
         putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
           dispatch(bodySlide.actions.updatetym({ id: item.id, iduser })),
         );
@@ -186,9 +186,9 @@ function Kids({ kids, text, iduser, setToglecha }) {
         <div onClick={() => handleRight()} className="slide-btn right">
           <i className="fa-solid fa-chevron-right"></i>
         </div>
-        <div id="slider1">
-          <div className="Product__item1">
-            {arr1.map((item) => {
+        <div id="slider4">
+          <div className="Product__item4">
+            {arr1.map((item, index) => {
               return (
                 <div className="item1" key={item.id}>
                   <div
@@ -217,8 +217,8 @@ function Kids({ kids, text, iduser, setToglecha }) {
               );
             })}
           </div>
-          <div className="Product__item1">
-            {arr2.map((item) => {
+          <div className="Product__item4">
+            {arr2.map((item, index) => {
               return (
                 <div className="item1" key={item.id}>
                   <div
@@ -238,6 +238,7 @@ function Kids({ kids, text, iduser, setToglecha }) {
                       <div className="author">{item.author}</div>
                       <div className="authorstar">
                         {item.star ?? 0}
+
                         <i className="fa-solid fa-star"></i>
                       </div>
                     </div>
@@ -246,8 +247,8 @@ function Kids({ kids, text, iduser, setToglecha }) {
               );
             })}
           </div>
-          <div className="Product__item1">
-            {arr0.map((item) => {
+          <div className="Product__item4">
+            {arr0.map((item, index) => {
               return (
                 <div className="item1" key={item.id}>
                   <div
@@ -279,9 +280,7 @@ function Kids({ kids, text, iduser, setToglecha }) {
         </div>
         <ul className="dots">
           {arr.map((item, index) => {
-            return (
-              <li key={index * 100} onClick={() => handleactive(index)} className={index == tive ? 'active' : ''}></li>
-            );
+            return <li key={item} onClick={() => handleactive(index)} className={index == tive ? 'active' : ''}></li>;
           })}
         </ul>
       </div>
@@ -289,4 +288,4 @@ function Kids({ kids, text, iduser, setToglecha }) {
   );
 }
 
-export default React.memo(Kids);
+export default React.memo(Manga);

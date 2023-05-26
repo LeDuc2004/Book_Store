@@ -5,66 +5,72 @@ import Footsell from '../common/footer/Footsell';
 import { fetchAult, fetchKids, fetchManga, fetchYoung } from './homeSlide';
 import Flag from '../flag/Flag';
 import Star from '../common/rate/Rate';
+import Kids from '../sliderKids/Kids';
+import Ault from '../sliderAult/Ault';
+import Manga from '../sliderManga/Manga';
+import Young from '../sliderYoung/Young';
+import { fetchDatabase } from '../body/bodySlide';
+import ScrollToTopButton from '../btnsmooth/ScrollToTopButton';
 
 function Home() {
-    const [kids , setKids] = useState([])
+  const [kids, setKids] = useState([]);
+  const [young, setYoung] = useState([]);
+  const [ault, setAult] = useState([]);
+  const [manga, setManga] = useState([]);
+  const [iduser, setIduser] = useState('');
+  const [toglecha , setToglecha] = useState(true)
 
   const dispatch = useDispatch();
-  useEffect(()=>{
-   dispatch(fetchKids())
-   dispatch(fetchAult())
-   dispatch(fetchManga())
-   dispatch(fetchYoung())
-  }, [])
-  let dataKidshome = useSelector(state => state)
-  console.log(dataKidshome);
-  let dataKids = useSelector(state => state.home)
   useEffect(() => {
-    console.log(dataKids.kids);
-     setKids(dataKids.kids)
-  }, [dataKids.kids]);
+    if (localStorage.getItem('token') != null) {
+      fetch('http://localhost:5000/user', {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Beaer ${localStorage.getItem('token')}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setIduser(data.user.id);
+        });
+    }
+    dispatch(fetchDatabase());
+  }, [toglecha]);
+  let dataProduct = useSelector((state) => state.listSp);
+  useEffect(() => {
+    let arr1 = [];
+    let arr2 = [];
+    let arr3 = [];
+    let arr4 = [];
+    let array = dataProduct.database;
+
+    for (let i = 0; i < array.length; i++) {
+      if (i < 21) {
+        arr1.push(array[i]);
+      } else if (i < 42) {
+        arr2.push(array[i]);
+      } else if (i < 63) {
+        arr3.push(array[i]);
+      } else if (i < 84) {
+        arr4.push(array[i]);
+      }
+      setKids(arr1);
+      setYoung(arr2);
+      setAult(arr3);
+      setManga(arr4);
+    }
+  }, [dataProduct.database]);
+  
 
   return (
     <>
-    <Slide kids={kids} ></Slide>
-    <div className="list-sp no">
-        {kids.length > 0
-          ? kids.map((item, index) => {
-              return (
-                <>
-                  <div key={item.id} className="list-sp__sun">
-                    <div style={item.hanmuon != '' ? {} : { display: 'none' }}>
-                      <Flag></Flag>
-                    </div>
-                    <div  className="tym">
-                      <i className="fa-solid fa-heart"></i>
-                    </div>
-
-                    <a href={`http://localhost:3001/detail/${item.id}`} className="sun-img">
-                      <img src={item.img} alt="" />
-                    </a>
-                    <div className="sun-name">{item.name}</div>
-                    <div className="sun-price"></div>
-                    <Star star={item.star} disabled={true}></Star>
-
-                    <div className="btn-sp">
-                      {item.hanmuon == '' ? (
-                        <div  className="btn-detail">
-                          Mượn sách
-                        </div>
-                      ) : (
-                        <div>Hạn trả sách: {item.hanmuon}</div>
-                      )}
-                    </div>
-                  </div>
-                </>
-              );
-            })
-          : ''}
-      </div>
-    
-    <Footsell></Footsell>
-
+      <Slide></Slide>
+      <Kids kids={kids} text={'Trẻ em & Thiếu nhi'} iduser={iduser} setToglecha={setToglecha}></Kids>
+      <Young kids={young} text={'Thanh Thiếu niên'} iduser={iduser}></Young>
+      <Ault kids={ault} text={'Manga & Anime'} iduser={iduser}></Ault>
+      <Manga kids={manga} text={'Hành động & Trinh thám'} iduser={iduser}></Manga>
+      <Footsell></Footsell>
     </>
   );
 }

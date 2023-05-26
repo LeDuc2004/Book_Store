@@ -66,6 +66,7 @@ function Signin() {
       let user = {
         id: fborgg.id,
         tk: fborgg.name,
+        img:fborgg.image,
         token: [],
         borrow: [],
       };
@@ -114,14 +115,13 @@ function Signin() {
           setSpantk('.');
         }
 
-
         if (mk == '') {
           setSpanmk('Vui lòng nhập mật khẩu.');
         } else {
           setSpanmk('.');
         }
 
-        if (mk != ''  && mk != cfmk) {
+        if (mk != '' && mk != cfmk) {
           setSpancf('Mật khẩu nhập lại không khớp.');
         } else {
           setSpancf('.');
@@ -145,17 +145,16 @@ function Signin() {
           }
         }
         if (flag == false) {
-          if (mk != "" && cfmk != "" && mk == cfmk) {
-       fetch('http://localhost:3000/users', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(useAuthen),
-          });
-          ShowSuccessToast("Đăng ký thành công")
+          if (mk != '' && cfmk != '' && mk == cfmk) {
+            fetch('http://localhost:3000/users', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify(useAuthen),
+            });
+            ShowSuccessToast('Đăng ký thành công');
           }
-
         } else if (flag == true) {
           setSpantk('Tài khoản tồn tại');
         }
@@ -164,16 +163,18 @@ function Signin() {
   }
   function handleSubmitdn(fborgg) {
     if (fborgg) {
+console.log(fborgg);
       fetch('http://localhost:5000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           authorization: 'levanduc',
         },
-        body: JSON.stringify({ id: fborgg.id, name: fborgg.tk }),
+        body: JSON.stringify({ id: fborgg.id, name: fborgg.tk , img:fborgg.img }),
       })
         .then((res) => res.json())
         .then((data1) => {
+          console.log(data1);
           fetch(`http://localhost:3000/users/${fborgg.id}`)
             .then((res) => res.json())
             .then((data) => {
@@ -189,6 +190,7 @@ function Signin() {
               },
               body: JSON.stringify(data2),
             }).then((res) => {
+              console.log(res.status);
               if (res.status == 200) {
                 localStorage.setItem('token', data1.accessToken);
 
@@ -198,66 +200,78 @@ function Signin() {
           }
         });
     } else {
-      fetch('http://localhost:3000/users')
-        .then((res) => res.json())
-        .then((data) => {
-          authen(data);
-        });
-      function authen(data) {
-        let flag = true;
-        for (let i = 0; i < data.length; i++) {
-          if (tk != data[i].tk) {
-            flag = false;
-            continue;
-          } else {
-            if (mk == data[i].mk) {
-              flag = true;
-
-              fetch('http://localhost:5000/login', {
-                method: 'POST',
-                headers: {
-                  'Content-Type': 'application/json',
-                  authorization: 'levanduc',
-                },
-                body: JSON.stringify({ id: data[i].id, name: data[i].tk }),
-              })
-                .then((res) => res.json())
-                .then((data1) => {
-                  fetch(`http://localhost:3000/users/${data[i].id}`)
+      if (tk == '' && mk == '') {
+        setSpantk('Vui lòng nhập tài khoản.');
+        setSpanmk('Vui lòng nhập mật khẩu.');
+      } else {
+        fetch('http://localhost:3000/users')
+          .then((res) => res.json())
+          .then((data) => {
+            authen(data);
+          });
+        function authen(data) {
+          let flag = true;
+          for (let i = 0; i < data.length; i++) {
+            if (tk != data[i].tk) {
+              flag = false;
+              continue;
+            } else {
+              if (mk == '') {
+                setSpanmk('Vui lòng nhập mật khẩu.');
+                setSpantk(".")
+              } else {
+                setSpanmk('.');
+                if (mk == data[i].mk) {
+                  fetch('http://localhost:5000/login', {
+                    method: 'POST',
+                    headers: {
+                      'Content-Type': 'application/json',
+                      authorization: 'levanduc',
+                    },
+                    body: JSON.stringify({ id: data[i].id, name: data[i].tk }),
+                  })
                     .then((res) => res.json())
-                    .then((data) => {
-                      pushtoken(data);
-                    });
-                  function pushtoken(data2) {
-                    data2.token.push(data1.accessToken);
-                    fetch(`http://localhost:3000/users/${data[i].id}`, {
-                      method: 'PUT',
-                      headers: {
-                        'Content-Type': 'application/json',
-                        authorization: 'levanduc',
-                      },
-                      body: JSON.stringify(data2),
-                    }).then((res) => {
-                      if (res.status == 200) {
-                        localStorage.setItem('token', data1.accessToken);
+                    .then((data1) => {
+                      fetch(`http://localhost:3000/users/${data[i].id}`)
+                        .then((res) => res.json())
+                        .then((data) => {
+                          pushtoken(data);
+                        });
+                      function pushtoken(data2) {
+                        data2.token.push(data1.accessToken);
+                        fetch(`http://localhost:3000/users/${data[i].id}`, {
+                          method: 'PUT',
+                          headers: {
+                            'Content-Type': 'application/json',
+                            authorization: 'levanduc',
+                          },
+                          body: JSON.stringify(data2),
+                        }).then((res) => {
+                          if (res.status == 200) {
+                            localStorage.setItem('token', data1.accessToken);
 
-                        window.location.href = '/';
+                            window.location.href = '/';
+                          }
+                        });
                       }
                     });
-                  }
-                });
 
-              break;
-            } else {
+                  break;
+                } else {
+                  flag = true;
+                  setSpantk('.');
+                  setSpanmk('Mật khẩu không chính xác.');
+                }
+              }
+
               flag = true;
-              setSpantk('.')
-              setSpanmk("Mật khẩu không chính xác.")
+              break;
             }
           }
-        }
-        if (flag == false) {
-          console.log('tk sai');
-          setSpantk("Tài khoản không chính xác")
+          if (flag == false) {
+            setSpantk('Tài khoản không chính xác');
+            setSpanmk('.');
+          }
         }
       }
     }

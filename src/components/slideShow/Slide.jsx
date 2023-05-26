@@ -1,23 +1,30 @@
 import React, { useEffect, useState, useRef } from 'react';
 import './slide.scss';
 
-function Slide({kids}) {
+function Slide() {
   let arr = [
     {
-      sliderBackground: '/slider/26562_Gateway_Quote_A1_05-15.jpg',
-      img: '/kids/kids (67).jpg',
+      id: 100,
+      sliderBackground: '/slider/26562_Gateway_Quote_A4_05-15.jpg',
+      img: '/kids/kids (70).jpg',
     },
     {
+      id: 111,
+
       sliderBackground: '/slider/26562_Gateway_Quote_A2_05-15.jpg',
       img: '/kids/kids (69).jpg',
     },
     {
+      id: 211,
+
       sliderBackground: '/slider/26562_Gateway_Quote_A3_05-15.jpg',
-      img: '/kids/kids (68).jpg',
+      img: '/kids/kids (70).jpg',
     },
     {
-      sliderBackground: '/slider/26562_Gateway_Quote_A4_05-15.jpg',
-      img: '/kids/kids (70).jpg',
+      id: 1111,
+
+      sliderBackground: '/slider/26562_Gateway_Quote_A1_05-15.jpg',
+      img: '/kids/kids (67).jpg',
     },
   ];
   const [data, setData] = useState(arr);
@@ -26,7 +33,6 @@ function Slide({kids}) {
   const [isDragging, setIsDragging] = useState(false);
   const [startOffset, setStartOffset] = useState(0);
   const [tive, setTive] = useState(0);
-  const active = useRef(0);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -65,7 +71,7 @@ function Slide({kids}) {
       } else if (tive < 0) {
         setTive(arr.length - 2);
       } else {
-        setTive(tive - 1 );
+        setTive(tive - 1);
       }
       setCurrentIdx(currentIdx + 1);
       setTogle(false);
@@ -80,9 +86,9 @@ function Slide({kids}) {
       let lists = document.querySelectorAll('.item');
       document.getElementById('slider').appendChild(lists[0]);
       if (tive > arr.length - 2) {
-        setTive(0)
+        setTive(0);
       } else {
-        setTive(tive + 1)
+        setTive(tive + 1);
       }
       setCurrentIdx(currentIdx + 1);
       setTogle(false);
@@ -92,12 +98,11 @@ function Slide({kids}) {
     } else if (togle) {
       let lists = document.querySelectorAll('.item');
       document.getElementById('slider').appendChild(lists[0]);
-    
 
       if (tive > arr.length - 2) {
-        setTive(0)
+        setTive(0);
       } else {
-       setTive(tive + 1)
+        setTive(tive + 1);
       }
       setCurrentIdx(currentIdx + 1);
       setTogle(false);
@@ -106,44 +111,45 @@ function Slide({kids}) {
       }, 400);
     }
   }
-  
+
   function handleactive(id) {
-    let local = tive - id
+    let local = tive - id;
     if (local < 0) {
       for (let i = 0; i < -local; i++) {
-        handleRight()
+        handleRight();
       }
     }
     if (local > 0) {
       for (let i = 0; i < local; i++) {
-        handleLeft()
+        handleLeft();
       }
     }
-    setTive(id)
+    setTive(id);
   }
-
 
   return (
     <>
-      <div key={1} id="slide-container" onMouseDown={handleMouseDown} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
-        <div className="btn-cha">
-          <div onClick={() => handleLeft()} className="slide-btn left">
-            <i className="fa-solid fa-chevron-left"></i>
-          </div>
-
-          <div onClick={() => handleRight()} className="slide-btn right">
-            <i className="fa-solid fa-chevron-right"></i>
-          </div>
+      <div
+        key={1}
+        id="slide-container"
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+      >
+        <div onClick={() => handleLeft()} className="slide-btn left">
+          <i className="fa-solid fa-chevron-left"></i>
         </div>
+
+        <div onClick={() => handleRight()} className="slide-btn right">
+          <i className="fa-solid fa-chevron-right"></i>
+        </div>
+
         <div id="slider">
           {data.map((item, index) => {
             return (
-              <div
-                key={item.img}
-                className="item"
-              >
+              <a href={`http://localhost:3001/detail/${index}`} key={item.id} className="item">
                 <img src={item.sliderBackground} alt="" />
-              </div>
+              </a>
             );
           })}
         </div>
@@ -151,21 +157,14 @@ function Slide({kids}) {
           {arr.map((item, index) => {
             return (
               
-              <>
-                <li
-                  key={index}
-                  onClick={() => handleactive(index)}
-                  className={index == tive ? 'active' : ''}
-                ></li>
-              </>
+                <li key={item.id} onClick={() => handleactive(index)} className={index == tive ? 'active' : ''}></li>
+              
             );
           })}
         </ul>
       </div>
-
-      {/* ... */}
     </>
   );
 }
 
-export default Slide;
+export default React.memo(Slide);
