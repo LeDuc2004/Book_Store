@@ -1,4 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { getData } from '../../services';
 
 export const bodySlide = createSlice({
   name: 'filter',
@@ -78,16 +79,11 @@ export const bodySlide = createSlice({
       });
     },
     trangthaisach: (state, action) => {
-      if (action.payload.status) {
-        state.hanmuon = true
-      } else if (action.payload.status == false) {
-        state.hanmuon = false
-
-      }
+        state.hanmuon = action.payload.status
     },
     trangthaistar: (state, action) => {
  
-        state.hanmuon = action.payload
+        state.star = action.payload
     },
   },
   extraReducers: (builder) => {
@@ -109,9 +105,27 @@ export const bodySlide = createSlice({
 });
 
 export const fetchMoreTodos = createAsyncThunk('todos/fetchMoreTodos', async (id) => {
-   console.log("ref1");
-    const res = await fetch(`http://localhost:5000/loadBook/${id}`);
+  let endpoint = {}
+  if (id.search) {
+    endpoint = {
+      search:id.search
+   }
+  }
+  if (id.author) {
+    endpoint = {
+      author:id.author.toLowerCase()
+   }
+  }
+  console.log(endpoint);
+    const res = await fetch(`http://localhost:5000/loadBook/${id.id}`, {
+      method: 'POST',
+      body: JSON.stringify(endpoint),
+      headers:{
+        'Content-Type': 'application/json',
+      }
+    });
     let data = await res.json();
+    console.log(data);
     return data;
 
 });

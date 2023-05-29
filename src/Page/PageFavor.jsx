@@ -3,7 +3,7 @@ import Header from "../components/common/header/Header";
 
 function PageFavor() {
     return ( <>
-    <Header></Header>
+    <Header detail={"none"}></Header>
     <Favorite></Favorite>
     </> );
 }

@@ -13,10 +13,43 @@ app.get('/authenAdmin', authenToken, (req, res) => {
   } else {
     res.send(201).send('qq');
   }
-});
-app.get('/loadBook/:id', (req, res) => {
+}); 
+app.post('/loadBook/:id', (req, res) => {
   let { id } = req.params;
-  if (id) {
+  let search = req.body.search;
+  let author = req.body.author
+  if (search || author ) {
+    if (search) {
+      fetch('http://localhost:3000/database')
+      .then((res) => res.json())
+      .then((data) => {
+        database(data);
+      });
+    function database(data) {
+      const product = data.filter((item) => {
+        return item.name.toLowerCase().replace(/\s/g, '').includes(search.replace(/\s/g, ''));
+      });
+      res.send(product);
+      
+    }
+    }
+    if (author) {
+      console.log(author);
+      fetch('http://localhost:3000/database')
+      .then((res) => res.json())
+      .then((data) => {
+        database(data);
+      });
+    function database(data) {
+      const product = data.filter((item) => {
+        return item.author.toLowerCase().replace(/\s/g, '').includes(author.replace(/\s/g, ''));
+      });
+      res.send(product);
+      
+    }
+    }
+  }else{
+      if (id) {
     fetch('http://localhost:3000/database')
       .then((res) => res.json())
       .then((data) => {
@@ -31,7 +64,7 @@ app.get('/loadBook/:id', (req, res) => {
           if (index < 21) {
             return item;
           }
-        });  
+        }); 
         res.send(kids);
       } else if (id == 'young') {
         let kids = data.filter((item, index) => {
@@ -57,11 +90,12 @@ app.get('/loadBook/:id', (req, res) => {
       }
     }
   }
+  }
+
 });
 app.post('/login', (req, res) => {
   if (req.headers.authorization == 'levanduc') {
     const accessToken = jwt.sign(req.body, 'levanduc');
-    console.log(accessToken);
     res.status(200).send({ accessToken });
   } else {
     res.status(404).send('ERROR');
@@ -192,7 +226,7 @@ function authenToken(req, res, next) {
       req.user = data;
       next();
     }
-  });
+  });  
 }
 
 app.listen(5000, () => {

@@ -18,7 +18,7 @@ function Home() {
   const [ault, setAult] = useState([]);
   const [manga, setManga] = useState([]);
   const [iduser, setIduser] = useState('');
-  const [toglecha , setToglecha] = useState(true)
+  const [toglecha, setToglecha] = useState(true);
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -39,29 +39,16 @@ function Home() {
   }, [toglecha]);
   let dataProduct = useSelector((state) => state.listSp);
   useEffect(() => {
-    let arr1 = [];
-    let arr2 = [];
-    let arr3 = [];
-    let arr4 = [];
-    let array = dataProduct.database;
-
-    for (let i = 0; i < array.length; i++) {
-      if (i < 21) {
-        arr1.push(array[i]);
-      } else if (i < 42) {
-        arr2.push(array[i]);
-      } else if (i < 63) {
-        arr3.push(array[i]);
-      } else if (i < 84) {
-        arr4.push(array[i]);
-      }
-      setKids(arr1);
-      setYoung(arr2);
-      setAult(arr3);
-      setManga(arr4);
-    }
+    const array = dataProduct.database;
+    const arr1 = array.slice(0, 21);
+    const arr2 = array.slice(21, 42);
+    const arr3 = array.slice(42, 63);
+    const arr4 = array.slice(63, 84);
+    setKids(arr1);
+    setYoung(arr2);
+    setAult(arr3);
+    setManga(arr4);
   }, [dataProduct.database]);
-  
 
   return (
     <>

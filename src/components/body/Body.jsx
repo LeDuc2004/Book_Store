@@ -6,13 +6,10 @@ import dayjs from 'dayjs';
 import { HandleScroll } from '../../hooks/handleScroll/HandleScroll';
 import Footsell from '../common/footer/Footsell';
 import { getData, postData, putData } from '../../services';
-import Star from '../common/rate/Rate';
-import Calander from '../calander/Calander';
-import Confirm from '../confirm/Confirm';
 import Flag from '../flag/Flag';
-import Slide from '../slideShow/Slide';
 import { Empty } from 'antd';
 import { productRemain } from '../catalog/selector';
+import { ShowErrorToast } from '../../hooks/toast/Tost';
 
 function Body() {
   const [scroll, setScroll] = useState(false);
@@ -74,47 +71,51 @@ function Body() {
   //   setItem(item);
   // }
   function addlike(item) {
-    console.log(1);
-    if (item.tym.includes(iduser)) {
-      getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
-      function addtym1(data) {
-        let obj = { ...data };
-        obj.tym = data.tym.filter((item) => item != iduser);
-        dispatch(bodySlide.actions.updatetymsp1({ id: item.id, iduser }));
-        putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
-          dispatch(bodySlide.actions.updatetymsp1({ id: item.id, iduser }))
-          
-        );
+    if (localStorage.getItem('token') != 'null') {
+      if (item.tym.includes(iduser)) {
+        getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
+        function addtym1(data) {
+          let obj = { ...data };
+          obj.tym = data.tym.filter((item) => item != iduser);
+          dispatch(bodySlide.actions.updatetymsp1({ id: item.id, iduser }));
+          putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
+            dispatch(bodySlide.actions.updatetymsp1({ id: item.id, iduser }))
+            
+          );
+        }
+        getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data))
+        function addtym(data) {
+          let obj = { ...data };
+  
+          obj.tym = data.tym.filter((item1) => item1.id != item.id);
+  
+          putData(`http://localhost:3000/users/${iduser}`, obj);
+        }
+      } else {
+        getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
+        function addtym1(data) {
+          let obj = { ...data };
+          obj.tym.push(iduser);
+          putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
+            dispatch(bodySlide.actions.updatetymsp({ id: item.id, iduser })),
+          );
+        }
+        getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
+        function addtym(data) {
+          let obj = { ...data };
+          obj.tym.push(item);
+          putData(`http://localhost:3000/users/${iduser}`, obj);
+        }
       }
-      getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data))
-      function addtym(data) {
-        let obj = { ...data };
 
-        obj.tym = data.tym.filter((item1) => item1.id != item.id);
-
-        putData(`http://localhost:3000/users/${iduser}`, obj);
-      }
-    } else {
-      getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
-      function addtym1(data) {
-        let obj = { ...data };
-        obj.tym.push(iduser);
-        putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
-          dispatch(bodySlide.actions.updatetymsp({ id: item.id, iduser })),
-        );
-      }
-      getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
-      function addtym(data) {
-        let obj = { ...data };
-        obj.tym.push(item);
-        putData(`http://localhost:3000/users/${iduser}`, obj);
-      }
+    }else{
+      ShowErrorToast("Vui lòng đăng nhập")
     }
   }
   return (
     <>
       <div className="list-sp no">
-        {listSearch.length > 0
+        {listSearch?.length > 0
           ? listSearch.map((item, index) => {
               return (
                 <div className="item1" key={item.id}>

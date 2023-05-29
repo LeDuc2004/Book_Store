@@ -5,7 +5,7 @@ import { bodySlide, fetchMoreTodos } from '../../body/bodySlide';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import Menu from './MenuSearch';
-function Header({ signin, setSearchPage }) {
+function Header({ signin, setSearchPage, detail }) {
   const dispatch = useDispatch();
   const [imguser, setImg] = useState(
     '/61010830-user-icon-man-profile-businessman-avatar-person-glyph-vector-illustration.webp',
@@ -16,6 +16,8 @@ function Header({ signin, setSearchPage }) {
   const [togle, setTogle] = useState(true);
   const [textsearch, setTextsearch] = useState('');
   const countTime = useRef(null);
+  const inputRef = useRef(null);
+  const [isInputFocused, setInputFocused] = useState(false);
   const [handlenone, setHandlenone] = useState(false);
   const [valuetk, setValuetk] = useState('');
   const [password, setPassword] = useState('');
@@ -29,22 +31,16 @@ function Header({ signin, setSearchPage }) {
   const [nameuser, setNameuser] = useState('');
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
   const [listvalidatedn, setListvalidatedn] = useState([true, true, true, true]);
-  const [theloai , setTheloai] = useState('')
+  const [theloai, setTheloai] = useState('');
   const { id } = useParams();
-  useEffect(()=>{
-   setTheloai(id)
-  }, [id])
+  useEffect(() => {
+    setTheloai(id);
+  }, [id]);
 
   const handleKeyDown = (event) => {
     if (event.key === 'Enter') {
-      dispatch(fetchMoreTodos('stop'));
-      dispatch(
-        bodySlide.actions.enter({
-          search: textsearch.toLowerCase(),
-        }),
-      );
       setTextsearch('');
-      setSearchPage(true);
+      window.location.href = `/catalog/search=${textsearch}`;
     }
   };
   // iduser
@@ -69,9 +65,6 @@ function Header({ signin, setSearchPage }) {
     }
   }, []);
 
-  function navpa() {
-    setTogle(!togle);
-  }
   function handleSearch(e) {
     if (countTime.current) {
       clearTimeout(countTime.current);
@@ -101,35 +94,65 @@ function Header({ signin, setSearchPage }) {
       }
     });
   }
+  const handleIconClick = () => {
+    if (!isInputFocused) {
+      setInputFocused(true);
+      inputRef.current.focus();
+    }
+    setInputFocused(!isInputFocused);
+    setIsSearchExpanded(!isSearchExpanded);
+  };
 
   return (
     <>
       <div className="header">
-        <div className='chungbed1'>
+        <i id='fa-bars' class="fa-solid fa-bars"></i>
+        <div className="chungbed1">
           <a href="/" className="header__logo">
             <img src="https://thebookland.vn/resources/img/thebooklandNew.png" className="App-logo" alt="logo" />
           </a>
 
           <div className="list-theloai">
-            <a  href='/catalog/kids' style={{ color: '#f6891e' }} className={`list-theloai__sun one ${theloai == "kids" ? "kids" : ''}`}>
+            <a
+              href="/catalog/kids"
+              style={{ color: '#f6891e' }}
+              className={`list-theloai__sun one ${theloai == 'kids' ? 'kids' : ''}`}
+            >
               Sách Cho Bé
             </a>
-            <a href='/catalog/young' style={{ color: '#234d84' }} className={`list-theloai__sun two ${theloai == "young" ? "kids" : ''}`}>
+            <a
+              href="/catalog/young"
+              style={{ color: '#234d84' }}
+              className={`list-theloai__sun two ${theloai == 'young' ? 'kids' : ''}`}
+            >
               Thanh Thiếu Niên
             </a>
-            <a href='/catalog/manga' style={{ color: '#36bfbc' }} className={`list-theloai__sun three ${theloai == "manga" ? "kids" : ''}`}>
+            <a
+              href="/catalog/manga"
+              style={{ color: '#36bfbc' }}
+              className={`list-theloai__sun three ${theloai == 'manga' ? 'kids' : ''}`}
+            >
               Manga
             </a>
-            <a href='/catalog/action' style={{ color: '#df393a' }} className={`list-theloai__sun four ${theloai == "action" ? "kids" : ''}`}>
+            <a
+              href="/catalog/action"
+              style={{ color: '#df393a' }}
+              className={`list-theloai__sun four ${theloai == 'action' ? 'kids' : ''}`}
+            >
               Trinh Thám
             </a>
           </div>
         </div>
         <div className="chungbed">
-          <div className={`search ${signin === 'none' ? 'hidden' : ''}`}>
-            <div className={isSearchExpanded ? 'expanded' : ''}>
-              <i className="fa-solid fa-magnifying-glass" onClick={() => setIsSearchExpanded(!isSearchExpanded)}></i>
+          <div
+            style={detail == 'none' ? { display: 'none' } : {}}
+            className={`search ${signin === 'none' ? 'hidden' : ''}`}
+          >
+            <div className={`div123 ${isSearchExpanded ? 'expanded' : ''}`}>
+              <i className="fa-solid fa-magnifying-glass" onClick={handleIconClick}></i>
               <input
+                autoComplete="off"
+                ref={inputRef}
                 id="search"
                 onChange={handleSearch}
                 type="text"
@@ -138,6 +161,7 @@ function Header({ signin, setSearchPage }) {
                 className={isSearchExpanded ? 'expanded' : ''}
               />
             </div>
+            <Menu text={textsearch} setInputFocused={setInputFocused} isInputFocused={isInputFocused}></Menu>
           </div>
 
           <div
@@ -251,7 +275,6 @@ function Header({ signin, setSearchPage }) {
           </div>
         </div>
       </div>
-      <Menu text={textsearch}></Menu>
     </>
   );
 }

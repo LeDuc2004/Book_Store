@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Flag from '../flag/Flag';
 import { getData, putData } from '../../services';
 import { bodySlide } from '../body/bodySlide';
-import { ShowInfoToast } from '../../hooks/toast/Tost';
+import { ShowErrorToast, ShowInfoToast } from '../../hooks/toast/Tost';
 function Kids({ kids, text, iduser, setToglecha }) {
   const [currentIdx, setCurrentIdx] = useState(0);
   const [togle, setTogle] = useState(true);
@@ -128,6 +128,8 @@ function Kids({ kids, text, iduser, setToglecha }) {
   }, [kids]);
   // Thêm yêu thích
  function addlike(item) {
+  if (localStorage.getItem('token') != 'null') {
+
     if (item.tym.includes(iduser)) {
       getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
       function addtym1(data) {
@@ -162,6 +164,9 @@ function Kids({ kids, text, iduser, setToglecha }) {
         putData(`http://localhost:3000/users/${iduser}`, obj);
       }
     }
+  }else{
+    ShowErrorToast("Vui lòng đăng nhập")
+  }
   }
 
   return (

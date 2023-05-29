@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Flag from '../flag/Flag';
 import { getData, putData } from '../../services';
 import { bodySlide } from '../body/bodySlide';
+import { ShowErrorToast } from '../../hooks/toast/Tost';
 
 function Young({ kids, text , iduser}) {
   const [currentIdx, setCurrentIdx] = useState(0);
@@ -127,40 +128,45 @@ function Young({ kids, text , iduser}) {
     setArr3(arr3);
   }, [kids]);
   function addlike(item) {
-    if (item.tym.includes(iduser)) {
-      getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
-      function addtym1(data) {
-        let obj = { ...data };
-        obj.tym = data.tym.filter((item) => item != iduser);
-        dispatch(bodySlide.actions.updatetym1({ id: item.id, iduser }));
-        putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
-          dispatch(bodySlide.actions.updatetym1({ id: item.id, iduser })),
-        );
-      }
-      getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
-      function addtym(data) {
-        let obj = { ...data };
+    if (localStorage.getItem('token') != 'null') {
 
-        obj.tym = data.tym.filter((item1) => item1.id != item.id);
-
-        putData(`http://localhost:3000/users/${iduser}`, obj);
+      if (item.tym.includes(iduser)) {
+        getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
+        function addtym1(data) {
+          let obj = { ...data };
+          obj.tym = data.tym.filter((item) => item != iduser);
+          dispatch(bodySlide.actions.updatetym1({ id: item.id, iduser }));
+          putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
+            dispatch(bodySlide.actions.updatetym1({ id: item.id, iduser })),
+          );
+        }
+        getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
+        function addtym(data) {
+          let obj = { ...data };
+  
+          obj.tym = data.tym.filter((item1) => item1.id != item.id);
+  
+          putData(`http://localhost:3000/users/${iduser}`, obj);
+        }
+      } else {
+        getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
+        function addtym1(data) {
+          let obj = { ...data };
+          obj.tym.push(iduser);
+          console.log(obj);
+          putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
+            dispatch(bodySlide.actions.updatetym({ id: item.id, iduser })),
+          );
+        }
+        getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
+        function addtym(data) {
+          let obj = { ...data };
+          obj.tym.push(item);
+          putData(`http://localhost:3000/users/${iduser}`, obj);
+        }
       }
-    } else {
-      getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
-      function addtym1(data) {
-        let obj = { ...data };
-        obj.tym.push(iduser);
-        console.log(obj);
-        putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
-          dispatch(bodySlide.actions.updatetym({ id: item.id, iduser })),
-        );
-      }
-      getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
-      function addtym(data) {
-        let obj = { ...data };
-        obj.tym.push(item);
-        putData(`http://localhost:3000/users/${iduser}`, obj);
-      }
+    }else{
+      ShowErrorToast("Vui lòng đăng nhập")
     }
   }
 

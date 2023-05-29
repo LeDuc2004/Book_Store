@@ -17,11 +17,19 @@ function Catagories() {
   const dispatch = useDispatch();
 
   let { id } = useParams();
+let endpoint = id.split("=")[1]
+let startpoint =id.split("=")[0]
 
-  useEffect(() => {
-    console.log("ref");
+  useEffect(() => { 
+    if (startpoint == 'search') {
+      dispatch(fetchMoreTodos({id , search:endpoint}));
+    }
+    if (startpoint == 'author') {
+      dispatch(fetchMoreTodos({id , author:endpoint}));
+    }else{
+      dispatch(fetchMoreTodos({id , data:endpoint}));
+    }
     dispatch(fetchDatabase());
-    dispatch(fetchMoreTodos(id));
     setSelectedCheckbox(id);
     setSelectedStar('all');
   }, []);
@@ -51,7 +59,6 @@ function Catagories() {
     setSelectedStar('all');
   }
   const handleChange = (value) => {
-    console.log(value);
     dispatch(bodySlide.actions.trangthaisach({status:value}))
   };
 
@@ -213,6 +220,10 @@ function Catagories() {
                   onChange={handleChange}
                   options={[
                     {
+                      value: 'all',
+                      label: 'Tất cả',
+                    },
+                    {
                       value: false,
                       label: 'Đang mượn',
                     },
@@ -223,48 +234,6 @@ function Catagories() {
                   ]}
                 />
               </Space>
-              <div className="thanhloc-keoPrice__text">Thể loại</div>
-              <div className="location-sun">
-                <input
-                  type="checkbox"
-                  checked={selectedCheckbox === 'all'}
-                  onChange={() => handleCheckboxClick('all')}
-                />
-                <div className="location-sun__name">Tất cả</div>
-              </div>
-
-              <div className="location-sun">
-                <input
-                  type="checkbox"
-                  checked={selectedCheckbox === 'kids'}
-                  onChange={() => handleCheckboxClick('kids')}
-                />
-                <div className="location-sun__name">Sách cho bé</div>
-              </div>
-              <div className="location-sun">
-                <input
-                  type="checkbox"
-                  checked={selectedCheckbox === 'young'}
-                  onChange={() => handleCheckboxClick('young')}
-                />
-                <div className="location-sun__name">Thanh thiếu niên</div>
-              </div>
-              <div className="location-sun">
-                <input
-                  type="checkbox"
-                  checked={selectedCheckbox === 'manga'}
-                  onChange={() => handleCheckboxClick('manga')}
-                />
-                <div className="location-sun__name">Manga & Anime</div>
-              </div>
-              <div className="location-sun">
-                <input
-                  type="checkbox"
-                  checked={selectedCheckbox === 'action'}
-                  onChange={() => handleCheckboxClick('action')}
-                />
-                <div className="location-sun__name">Hành động</div>
-              </div>
             </div>
             <div className="thanhloc-location thanhloc-keoPrice">
               <div className="thanhloc-keoPrice__text">Filter by Rating</div>

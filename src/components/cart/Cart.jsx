@@ -18,14 +18,14 @@ function Cart() {
 
   return (
     <>
-      <div className="list-sp">
+      <div className="list-sp cart">
         {listCart.status == 'idle'
           ? listCart.datasp.map((item, index) => {
               return (
-                <div key={index} className="list-sp__sun">
-                  <div className="sun-img">
+                <div  key={index} className="list-sp__sun">
+                  <a href={`detail/${item.id}`} className="sun-img">
                     <img src={item.img} alt="" />
-                  </div>
+                  </a>
                   <div className="sun-name">{item.name}</div>
                   <div className="sun-price">
                     <Countdown setConfirm={setConfirm} ngay={item.days} id={item.id}></Countdown>

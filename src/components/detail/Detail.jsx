@@ -183,7 +183,12 @@ function Detail() {
     setTogletb(false);
   }
   function tranleft() {
-    setTogletb(true);
+    if (localStorage.getItem('token') != 'null') {
+
+      setTogletb(true);
+    }else{
+      ShowErrorToast("Vui lòng đăng nhập")
+    }
   }
   function borrow(item , hanmuon) {
     if (hanmuon) {
@@ -227,25 +232,30 @@ function Detail() {
     ShowSuccessToast("Đã xóa thành công.")
   }
   function addlike(item) {
-    if (item.tym.includes(iduser)) {
-       ShowInfoToast("Sách đã có trong danh sách yêu thích")
-    } else {
-      getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
-      function addtym1(data) {
-        let obj = { ...data };
-        obj.tym.push(iduser);
-        putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
-          dispatch(bodySlide.actions.updatetym({ id: item.id, iduser })),
-        );
+    if (localStorage.getItem('token') != 'null') {
+
+      if (item.tym.includes(iduser)) {
+         ShowInfoToast("Sách đã có trong danh sách yêu thích")
+      } else {
+        getData(`http://localhost:3000/database/${item.id}`).then((data) => addtym1(data));
+        function addtym1(data) {
+          let obj = { ...data };
+          obj.tym.push(iduser);
+          putData(`http://localhost:3000/database/${item.id}`, obj).then((res) =>
+            dispatch(bodySlide.actions.updatetym({ id: item.id, iduser })),
+          );
+        }
+        getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
+        function addtym(data) {
+          let obj = { ...data };
+          obj.tym.push(item);
+          putData(`http://localhost:3000/users/${iduser}`, obj)
+          .then(res=> setTogle(!togle))
+        }
+        ShowSuccessToast("Đã thêm vào yêu thích")
       }
-      getData(`http://localhost:3000/users/${iduser}`).then((data) => addtym(data));
-      function addtym(data) {
-        let obj = { ...data };
-        obj.tym.push(item);
-        putData(`http://localhost:3000/users/${iduser}`, obj)
-        .then(res=> setTogle(!togle))
-      }
-      ShowSuccessToast("Đã thêm vào yêu thích")
+    }else{
+      ShowErrorToast("Vui lòng đăng nhập")
     }
   }
   return (
@@ -417,7 +427,7 @@ function Detail() {
           ) : (
             <div onClick={() => tranleft()} className="votereal">
               <Rate value={param1} onChange={(e) => choose(e)} />
-              <div onClick={() => tranleft()} className="detail__borrow btn">
+              <div  className="detail__borrow btn">
                 Đánh giá
               </div>
             </div>

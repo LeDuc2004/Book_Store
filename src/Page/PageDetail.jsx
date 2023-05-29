@@ -4,7 +4,7 @@ import Header from "../components/common/header/Header";
 
 function PageDetail() {
     return (  <>
-    <Header ></Header>
+    <Header detail={"none"} ></Header>
     <Detail></Detail>
     <Footsell></Footsell>
     </>);

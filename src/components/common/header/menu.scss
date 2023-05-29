@@ -1,62 +1,133 @@
-
-body{
-    position: relative;
-
+body {
+  position: relative;
 }
-.mangboc1{
-    .mangboc__inside{
-        width: 80%;
-        height: max-content;
-        display: flex;
-        flex-wrap: wrap;
-        background-color: rgb(219, 157, 42);
-        .nenauthor{
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            background-color: whitesmoke;
-            .mangboc__sun.author{
-                width: 50%;
-            }
-        }
-        .mangboc__sun{
-            .mangboc__author{
-                color: black;
-                background-color: whitesmoke;
-            }
-            cursor: pointer;
-            width: 50%;
-            display: flex;
-            align-items: center;
-            height: 60px;
-            border-bottom: 1px solid white;
-            padding: 5px 0 ;
-            img{
-                margin-left: 20px;
-                width: 10%;
-                height: 100%;
-            }
-            div{
-                color: white;
-                font-weight:600;
-                font-size: large;
-                margin-left: 20px;
-            }
-        }
+.mangboc1 {
+  position: absolute;
+  width: calc(100vw - 230px - 116px - 480px);
+  z-index: 99;
+  display: flex;
+  justify-content: end;
+  top: calc(100% + 28px);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 0px 4px 0px lightgray;
+  .mangboc__inside {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    .searchAuthor{
+        margin-left: 10px;
+        margin-top: 10px;
     }
-}
-@media only screen and (max-width:46.1875em){
-    .mangboc .mangboc__inside {
+    .nenauthor {
+      width: 100%;
+      display: flex;
+      background-color: white;
+      flex-direction: column;
+      .mangboc__sun.author {
         width: 100%;
-        height: max-content;
+        height: 33px;
         display: flex;
-        flex-wrap: wrap;
-        background-color: rgb(219, 157, 42);
+        align-items: center;
+      }
     }
-    .mangboc .mangboc__inside .mangboc__sun img {
-        margin-left: 20px;
+    .mangboc__sun:hover {
+      background-color: rgba(211, 211, 211, 0.221);
+    }
+    .mangboc__sun {
+      position: relative;
+      cursor: pointer;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid white;
+      padding: 5px 0;
+      .focused {
+        background-color: gray;
+      }
+      .mangboc__author {
+        color: black;
+        background-color: transparent;
+      }
+      img {
+        margin-left: 10px;
         width: 10%;
-        height: 100%;
-        min-width: 50px;
+        height: 70px;
+      }
+      div {
+        color: black;
+        font-weight: 600;
+        font-size: small;
+        margin-left: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+      }
+      i {
+        margin-left: 16px;
+        color: black;
+        font-size: 10px;
+        top: 15%;
+      }
     }
+  }
+}
+@media only screen and (max-width: 63.9375em) {
+  .mangboc1 {
+    position: absolute;
+    width: calc(100vw - 230px - 116px);
+    z-index: 99;
+    display: flex;
+    justify-content: end;
+    top: calc(100% + 28px);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 1px 0px 4px 0px lightgray;
+  }
+  
+}
+@media only screen and (max-width: 46.1875em) {
+  .header .chungbed1 .list-theloai .list-theloai__sun {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100% - 2px);
+    margin-left: 12px;
+    cursor: pointer;
+    font-size: small;
+    font-weight: 550;
+    opacity: 0.8;
+    transition: all 0.2s linear;
+    border-bottom: 3px solid transparent;
+}
+.wrapper-user {
+display: none;
+}
+.header .chungbed1 .list-theloai {
+  display: none;
+}
+.search div.expanded {
+  width: calc(100vw - 20px);
+  border: 1.5px solid lightgray;
+
+}
+.mangboc1 {
+  position: absolute;
+  width: calc(100vw - 15px);
+  z-index: 99;
+  display: flex;
+  justify-content: end;
+  top: calc(100% + 28px);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 1px 0px 4px 0px lightgray;
+}
+.mangboc1 .mangboc__inside .mangboc__sun img {
+  margin-left: 10px;
+  width: 10%;
+  height: 52px;
+}
 }

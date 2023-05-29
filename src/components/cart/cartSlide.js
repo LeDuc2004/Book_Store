@@ -10,6 +10,13 @@ export const cartSlide = createSlice({
           return item
         }
       });
+    },
+    deleteFav:(state , action) => {
+      state.datafavor = state.datafavor.filter((item) =>{
+        if (item.id != action.payload) {
+          return item
+        }
+      });
     }
   },
   extraReducers: (builder) => {

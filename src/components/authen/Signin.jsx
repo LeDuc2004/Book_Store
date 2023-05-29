@@ -11,13 +11,25 @@ function Signin() {
   const [spantk, setSpantk] = useState('.');
   const [spanmk, setSpanmk] = useState('.');
   const [spancf, setSpancf] = useState('.');
-
   const [tk, setTk] = useState('');
   const [mk, setMk] = useState('');
   const [cfmk, setCfmk] = useState('');
   const [togle, setTogle] = useState(true);
   const [common, setCommon] = useState(true);
   const clientId = '118219306920-94c7uh6uggg3b1jifmbuul0gkhbkl15g.apps.googleusercontent.com';
+
+  useEffect(() => {
+    function start() {
+      gapi.client.init({
+        clientId: clientId,
+        scope: '',
+      });
+    }
+    gapi.load('client:auth2', start);
+  });
+  useEffect(() => {
+    setCommon(localStorage.getItem('idd'));
+  }, [localStorage.getItem('idd')]);
   const responseGoogle = (response) => {
     if (response.provider == 'facebook') {
       const user = {
@@ -48,25 +60,13 @@ function Signin() {
     token: [],
     borrow: [],
   };
-  useEffect(() => {
-    function start() {
-      gapi.client.init({
-        clientId: clientId,
-        scope: '',
-      });
-    }
-    gapi.load('client:auth2', start);
-  });
-  useEffect(() => {
-    setCommon(localStorage.getItem('idd'));
-  }, [localStorage.getItem('idd')]);
 
   function handleSubmitdk(fborgg) {
     if (fborgg) {
       let user = {
         id: fborgg.id,
         tk: fborgg.name,
-        img:fborgg.image,
+        img: fborgg.image,
         token: [],
         borrow: [],
       };
@@ -163,14 +163,14 @@ function Signin() {
   }
   function handleSubmitdn(fborgg) {
     if (fborgg) {
-console.log(fborgg);
+      console.log(fborgg);
       fetch('http://localhost:5000/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           authorization: 'levanduc',
         },
-        body: JSON.stringify({ id: fborgg.id, name: fborgg.tk , img:fborgg.img }),
+        body: JSON.stringify({ id: fborgg.id, name: fborgg.tk, img: fborgg.img }),
       })
         .then((res) => res.json())
         .then((data1) => {
@@ -218,7 +218,7 @@ console.log(fborgg);
             } else {
               if (mk == '') {
                 setSpanmk('Vui lòng nhập mật khẩu.');
-                setSpantk(".")
+                setSpantk('.');
               } else {
                 setSpanmk('.');
                 if (mk == data[i].mk) {
@@ -249,6 +249,7 @@ console.log(fborgg);
                         }).then((res) => {
                           if (res.status == 200) {
                             localStorage.setItem('token', data1.accessToken);
+                            setSpantk('.');
 
                             window.location.href = '/';
                           }
@@ -269,6 +270,7 @@ console.log(fborgg);
             }
           }
           if (flag == false) {
+            console.log(1);
             setSpantk('Tài khoản không chính xác');
             setSpanmk('.');
           }
@@ -278,12 +280,18 @@ console.log(fborgg);
   }
 
   function idd(id) {
+    setMk('');
+    setTk('');
+    setCfmk('');
+    setSpantk('.');
+    setSpanmk('.');
+    setSpancf('.');
     setTogle(!togle);
     localStorage.setItem('idd', id);
   }
   return (
     <>
-      <Header signin={'none'} />
+      <Header signin={'none'} detail={'none'} />
       <div className="tbl-dn">
         <div className="common-cha">
           <div onClick={() => idd(1)} className={common == 2 ? 'common' : 'common in'}>
@@ -295,11 +303,12 @@ console.log(fborgg);
           <div className={common == 2 ? 'cuon' : 'cuon1'}></div>
         </div>
 
-        <input onChange={(e) => setTk(e.target.value)} type="text" placeholder="Tài khoản..." />
+        <input value={tk} onChange={(e) => setTk(e.target.value)} type="text" placeholder="Tài khoản..." />
         <p style={spantk == '.' ? { visibility: 'hidden' } : { visibility: 'visible' }}>{spantk}</p>
-        <input onChange={(e) => setMk(e.target.value)} type="password" placeholder="Mật khẩu..." />
+        <input value={mk} onChange={(e) => setMk(e.target.value)} type="password" placeholder="Mật khẩu..." />
         <p style={spanmk == '.' ? { visibility: 'hidden' } : { visibility: 'visible' }}>{spanmk}</p>
         <input
+          value={cfmk}
           onChange={(e) => setCfmk(e.target.value)}
           type="password"
           placeholder="Xác nhận mật khẩu..."

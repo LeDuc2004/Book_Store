@@ -1,6 +1,6 @@
 import '../body/_body.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { fetchDatabase, fetchMoreTodos } from '../body/bodySlide';
 import dayjs from 'dayjs';
 import { HandleScroll } from '../../hooks/handleScroll/HandleScroll';
@@ -13,6 +13,7 @@ function Search() {
   const [list, SetList] = useState('');
   const [item, setItem] = useState('');
   const dispatch = useDispatch();
+  
 
 
 

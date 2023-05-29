@@ -1,3 +1,28 @@
+.list-sp.cart{
+display: flex;
+width: 90%;
+margin: 0 5%;
+    .list-sp__sun {
+        position: relative;
+        width: 17%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 15px 0.5%;
+        padding: 10px 1%;
+        justify-content: space-between;
+        border-radius: 5px;
+        .boyeuthich{
+            color: white;
+            padding: 10px 15px;
+            background-color: rgb(242, 28, 28);
+            font-size: medium;
+            font-weight: 550;
+            border-radius: 5px;
+        }
+    }
+}
+
 @media only screen and (max-width: 46.1875em) {
     .list-sp {
         width: 90%;
