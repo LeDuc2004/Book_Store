@@ -195,7 +195,7 @@
 @media only screen and (max-width: 63.9375em) {
   .header {
     box-sizing: border-box;
-    position: sticky;
+    position: relative;
     top: 0;
     z-index: 999;
     background-color: white !important;
@@ -225,6 +225,19 @@
 }
 /* mobile */
 @media only screen and (max-width: 46.1875em) {
+  .header {
+    box-sizing: border-box;
+    position: relative;
+    top: 0;
+    z-index: 999;
+    background-color: white !important;
+    box-shadow: -1px -1px 8px 0px gray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    width: 100%;
+}
   .header .chungbed1 .header__logo {
     width: 217px;
     min-width: 217px;

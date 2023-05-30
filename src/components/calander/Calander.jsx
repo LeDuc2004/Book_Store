@@ -110,6 +110,7 @@ function Calander({ item, setitem, setTogle1, togle1 }) {
             <div className="chooseDate__img">
               <img src={itemca.img} alt="" />
             </div>
+            <div>{itemca.name}</div>
             <div className="chooseDate__text">Chọn ngày mượn sách</div>
             <Space direction="vertical" size={5}>
               <RangePicker

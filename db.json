@@ -462,7 +462,7 @@
       "img": "/kids/kids (16).jpg",
       "theloai": "kids",
       "name": "Charlie and the Chocolate Factory",
-      "status": false,
+      "status": true,
       "tym": [],
       "comment": [
         {
@@ -1203,8 +1203,10 @@
       "img": "/manga/manga (1).jpg",
       "theloai": "manga",
       "name": "The Hunger Games",
-      "status": true,
-      "tym": [],
+      "status": false,
+      "tym": [
+        "108043588203461517800"
+      ],
       "comment": [
         {
           "name": "Lê Ðức",
@@ -1215,7 +1217,7 @@
         }
       ],
       "endDate": "7",
-      "hanmuon": "",
+      "hanmuon": "31-05-2023",
       "voted": [
         "108043588203461517800"
       ],
@@ -1463,13 +1465,13 @@
       "img": "/manga/manga (11).jpg",
       "theloai": "manga",
       "name": "The Perks of Being a Wallflower",
-      "status": false,
+      "status": true,
       "tym": [
         "108043588203461517800"
       ],
       "comment": [],
       "endDate": "7",
-      "hanmuon": "30-05-2023",
+      "hanmuon": "",
       "voted": [],
       "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
       "vote": [
@@ -1641,7 +1643,7 @@
         0,
         0
       ],
-      "star": 0
+      "star": null
     },
     {
       "id": 60,
@@ -2057,7 +2059,7 @@
         0,
         0
       ],
-      "star": 0
+      "star": null
     },
     {
       "id": 78,
@@ -2080,7 +2082,7 @@
         0,
         0
       ],
-      "star": 0
+      "star": null
     },
     {
       "id": 79,
@@ -2219,20 +2221,21 @@
       "img": "https://lh3.googleusercontent.com/a/AAcHTtcpadAkUAMhP8PABYqkxXe_GiYJuOznhIpkfo1z=s96-c",
       "token": [
         "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwODA0MzU4ODIwMzQ2MTUxNzgwMCIsIm5hbWUiOiJMw6ogw5Dhu6ljIiwiaWF0IjoxNjg1MDA5Mzc2fQ.BeeyLliEOIzub74JvZvjWXWY-3ZhSk_qKm4asv-d97Q",
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwODA0MzU4ODIwMzQ2MTUxNzgwMCIsIm5hbWUiOiJMw6ogw5Dhu6ljIiwiaW1nIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUFjSFR0Y3BhZEFrVUFNaFA4UEFCWXFreFhlX0dpWUp1T3puaElwa2ZvMXo9czk2LWMiLCJpYXQiOjE2ODUyODc3NjB9.McJaOWDV2vSmip9JcQAIPS7l0DDAeLEAiXyjMl7MWdI"
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwODA0MzU4ODIwMzQ2MTUxNzgwMCIsIm5hbWUiOiJMw6ogw5Dhu6ljIiwiaW1nIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUFjSFR0Y3BhZEFrVUFNaFA4UEFCWXFreFhlX0dpWUp1T3puaElwa2ZvMXo9czk2LWMiLCJpYXQiOjE2ODUyODc3NjB9.McJaOWDV2vSmip9JcQAIPS7l0DDAeLEAiXyjMl7MWdI",
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwODA0MzU4ODIwMzQ2MTUxNzgwMCIsIm5hbWUiOiJMw6ogw5Dhu6ljIiwiaW1nIjoiaHR0cHM6Ly9saDMuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2EvQUFjSFR0Y3BhZEFrVUFNaFA4UEFCWXFreFhlX0dpWUp1T3puaElwa2ZvMXo9czk2LWMiLCJpYXQiOjE2ODU0MTU2MzR9.ks-x-4hdc5pKqNKOTiNBYhYqEiY2oqBetq5OVI9pMr4"
       ],
       "borrow": [
-        {
-          "id": 52,
-          "img": "/manga/manga (11).jpg",
-          "name": "The Perks of Being a Wallflower",
-          "days": 1685462932479
-        },
         {
           "id": 14,
           "img": "/kids/kids (15).jpg",
           "name": "Alice's Adventures in Wonderland",
           "days": 1685506995695
+        },
+        {
+          "id": 42,
+          "img": "/manga/manga (1).jpg",
+          "name": "The Hunger Games",
+          "days": 1685523487348
         }
       ],
       "tym": [
@@ -2324,6 +2327,39 @@
             0
           ],
           "star": 0
+        },
+        {
+          "id": 42,
+          "author": "William Shakespeare",
+          "img": "/manga/manga (1).jpg",
+          "theloai": "manga",
+          "name": "The Hunger Games",
+          "status": false,
+          "tym": [],
+          "comment": [
+            {
+              "name": "Lê Ðức",
+              "id": "108043588203461517800",
+              "comment": "",
+              "star": 5,
+              "date": "26-05-2023"
+            }
+          ],
+          "endDate": "7",
+          "hanmuon": "31-05-2023",
+          "voted": [
+            "108043588203461517800"
+          ],
+          "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, voluptatem?",
+          "vote": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "star": 5
         }
       ]
     },

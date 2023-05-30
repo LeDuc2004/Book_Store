@@ -77,7 +77,7 @@ app.post('/loadBook/:id', (req, res) => {
         let kids = data.filter((item, index) => {
           if (index >= 42 && index < 63) {
             return item;
-          }
+          } 
         });
         res.send(kids);
       } else if (id == 'action') {

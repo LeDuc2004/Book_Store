@@ -84,6 +84,7 @@
       .detail__name {
         font-size: xx-large;
         font-weight: 600;
+        text-align: center;
       }
       margin: 0 3%;
 
@@ -354,6 +355,10 @@
   }
 }
 @media only screen and (min-width: 46.25em) and (max-width: 63.9375em) {
+  .trantb {
+    width: 60% !important;
+    height: 65vh !important;
+}
   .detail {
     width: 90%;
     margin: 50px 10%;
@@ -552,9 +557,68 @@
     display: flex;
     align-items: end;
     margin-bottom: 50px;
+    .ant-rate-star {
+      font-size: 35px;
+    }
   }
   .trantb {
     width: 90% !important;
     height: 90vh !important;
+}
+}
+@media only screen and (max-width:290px) {
+  #slider {
+    width: 100%;
+    height: 82%;
+    position: absolute;
+    overflow: hidden;
+    border-radius: 0px;
+}
+  .Product__top .Product__seeall {
+    font-size: small;
+    font-weight: 550;
+    text-decoration: underline;
+}
+  .Product__text {
+    margin: 15px 0;
+    font-size: large;
+    font-weight: 750;
+}
+  #slide-container {
+    width: 100%;
+    margin: 0 0%;
+    margin-top: 0px;
+    height: 251px;
+    position: relative;
+    border-radius: 0px;
+    transition: all 0.7s ease-in-out;
+    z-index: 2;
+    margin-bottom: 30px;
+}
+  .header .chungbed1 .header__logo {
+    width: 162px;
+    min-width: 87px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: -22px;
+}
+  .votereal {
+    width: max-content;
+    margin: 0 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-bottom: 50px;
+    .ant-rate-star {
+      font-size: 35px;
+    }
+  }
+  .votereal .detail__borrow {
+    border: 1.5px solid orange;
+    background-color: orange;
+    color: white;
+    margin-right: 10px;
+    margin-left: 0px;
+    margin-top: 10px;
 }
 }
